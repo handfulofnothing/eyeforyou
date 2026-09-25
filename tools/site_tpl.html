@@ -1,0 +1,513 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>eye for you · EYE4U, rebuilt by Claude</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="The 1998 EYE4U Flash intro, rebuilt frame by frame as live code, every cut on a downbeat of its original soundtrack. How Claude made it, with the beat analysis.">
+<meta property="og:title" content="eye for you · EYE4U, rebuilt">
+<meta property="og:description" content="A 1998 Flash intro, rebuilt frame by frame as live code by Claude, locked to its soundtrack.">
+<meta property="og:image" content="https://marceloeduardo.com/funslop/eyeforyou/media/og.jpg">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%22-40%20-40%2080%2080%22%3E%3Cellipse%20rx%3D%2238%22%20ry%3D%2220%22%20fill%3D%22%23F15D08%22/%3E%3Cellipse%20cx%3D%22-1%22%20rx%3D%2226%22%20ry%3D%2211%22%20fill%3D%22%23fff%22/%3E%3Ccircle%20cx%3D%22-2%22%20r%3D%2213%22%20fill%3D%22%23C0000E%22/%3E%3C/svg%3E">
+<link rel="stylesheet" href="fonts.css">
+<style>
+:root{
+  --paper:#fff; --ink:#141414; --ink2:#3a3733; --muted:#7a746d; --line:#e9e4dd; --soft:#f6f3ee; --soft2:#efeae3;
+  --orange:#F15D08; --red:#C0000E; --cyan:#0e9fb8; --green:#2f9e44;
+  --r:14px; --gut:28px;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 17px/1.62 Barlow,system-ui,-apple-system,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration-thickness:1px;text-underline-offset:3px}
+a:hover{color:var(--orange)}
+img,video,canvas,svg{display:block;max-width:100%}
+.wrap{max-width:1180px;margin:0 auto;padding:0 var(--gut)}
+h1,h2,h3{font-family:'Barlow Condensed',sans-serif;font-style:italic;font-weight:800;line-height:.92;letter-spacing:-.01em;margin:0}
+.o{color:var(--orange)}
+.muted{color:var(--muted)}
+.num{font-variant-numeric:tabular-nums}
+
+/* top bar */
+.top{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:20px 0;font:600 15px/1 'Barlow Condensed';letter-spacing:.03em}
+.crumbs{display:flex;gap:8px;align-items:center;color:var(--muted);white-space:nowrap;overflow:hidden}
+.crumbs a{text-decoration:none;color:var(--muted)} .crumbs a:hover{color:var(--orange)}
+.crumbs b{color:var(--ink);font-weight:700}
+.top nav{display:flex;gap:18px;flex:none} .top nav a{text-decoration:none;white-space:nowrap}
+
+/* hero */
+.hero{padding:48px 0 34px}
+.eyebrow{font:600 15px/1 'Barlow Condensed';letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:0 0 18px}
+.hero h1{font-size:clamp(72px,13vw,168px)}
+.lede{font-size:clamp(19px,2.1vw,23px);line-height:1.45;max-width:760px;margin:22px 0 0;color:var(--ink2)}
+
+/* player frame */
+.frame{position:relative;aspect-ratio:16/9;border-radius:var(--r);overflow:hidden;background:#000;
+  box-shadow:0 1px 2px rgba(0,0,0,.06),0 28px 60px -28px rgba(0,0,0,.45)}
+.frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.links{display:flex;flex-wrap:wrap;gap:10px;margin:18px 0 0}
+.btn{display:inline-flex;align-items:baseline;gap:8px;padding:11px 17px 10px;border-radius:999px;border:1.5px solid var(--ink);
+  font:700 16px/1 'Barlow Condensed';letter-spacing:.02em;text-decoration:none;color:var(--ink);background:var(--paper);transition:background .15s,color .15s,border-color .15s}
+.btn small{font-weight:500;color:var(--muted);font-size:14px}
+.btn:hover{background:var(--ink);color:#fff} .btn:hover small{color:#cfc9c2}
+.btn.primary{background:var(--orange);border-color:var(--orange);color:#fff}
+.btn.primary:hover{background:var(--ink);border-color:var(--ink)}
+
+/* sections */
+section{padding:84px 0 0}
+.sec-head{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:10px 32px;margin:0 0 22px}
+.sec-head h2{font-size:clamp(46px,6vw,72px)}
+.sec-head p{margin:0;max-width:520px;color:var(--ink2)}
+
+/* beat map */
+.bm{background:var(--soft);border-radius:var(--r);padding:18px 18px 16px}
+.readout{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 12px}
+.chip{background:var(--paper);border-radius:999px;padding:7px 13px 6px;font:600 15px/1 'Barlow Condensed';letter-spacing:.02em;white-space:nowrap}
+.chip b{font-weight:800}
+.chip.blk{background:var(--ink);color:#fff}
+#lane{width:100%;height:230px;border-radius:10px;background:var(--paper);cursor:pointer;touch-action:pan-y}
+#overview{width:100%;height:64px;margin-top:10px;border-radius:8px;background:var(--paper);cursor:pointer;touch-action:none}
+.now{display:flex;gap:12px;align-items:baseline;min-height:52px;margin:12px 2px 0;font-size:16px;line-height:1.4}
+.now .tag{flex:none;font:800 italic 17px/1 'Barlow Condensed';padding:5px 9px 4px;border-radius:6px;color:#fff;background:var(--muted)}
+.legend{display:flex;flex-wrap:wrap;gap:6px 18px;margin:12px 2px 0;font:500 14px/1.2 'Barlow Condensed';letter-spacing:.02em;color:var(--ink2)}
+.legend span{display:inline-flex;align-items:center;gap:7px}
+.sw{display:inline-block;width:14px;height:14px}
+.sw.down{width:2px;height:15px;background:var(--ink)} .sw.beat{width:1px;height:15px;background:#b9b2a9}
+.sw.env{width:18px;height:10px;background:#e3ddd5;border-radius:2px}
+.sw.kick{width:8px;height:8px;border-radius:50%;background:var(--ink)}
+.sw.cut{width:3px;height:15px;background:var(--orange)}
+.sw.dia{width:10px;height:10px;transform:rotate(45deg)}
+.sw.miss{width:18px;height:0;border-top:1.5px dashed var(--muted)}
+
+/* stats */
+.stats{display:grid;grid-template-columns:repeat(6,1fr);gap:1px;background:var(--line);border-radius:var(--r);overflow:hidden;border:1px solid var(--line)}
+.stat{background:var(--paper);padding:20px 18px 18px}
+.stat b{display:block;font:800 italic clamp(38px,4vw,52px)/.9 'Barlow Condensed';color:var(--orange);letter-spacing:-.01em}
+.stat b small{font-size:.5em;margin-left:3px;color:var(--ink)}
+.stat span{display:block;margin-top:10px;font-size:14.5px;line-height:1.35;color:var(--ink2)}
+
+/* compare */
+.sbs{border-radius:var(--r);overflow:hidden;background:#000;aspect-ratio:32/9}
+.sbs video{width:100%;height:100%}
+.sbs-labels{display:grid;grid-template-columns:1fr 1fr;margin:10px 0 0;font:700 italic 20px/1 'Barlow Condensed'}
+.sbs-labels span:last-child{padding-left:4px}
+.cap{margin:12px 0 0;color:var(--ink2);font-size:15.5px;max-width:760px}
+
+/* process */
+.intro{font-size:clamp(19px,2vw,22px);line-height:1.5;max-width:780px;margin:0 0 20px;color:var(--ink2)}
+.steps{list-style:none;margin:0;padding:0}
+.step{display:grid;grid-template-columns:120px minmax(0,1fr);gap:0 24px;padding:46px 0 0;margin:46px 0 0;border-top:1px solid var(--line)}
+.step:first-child{margin-top:26px}
+.step .n{font:800 italic 72px/.8 'Barlow Condensed';color:var(--orange);letter-spacing:-.02em}
+.step h3{font-size:clamp(40px,4.6vw,54px);margin:0 0 14px}
+.step p{max-width:700px;margin:0 0 14px}
+figure{margin:24px 0 0}
+figure img{width:100%;height:auto;border-radius:10px;background:var(--soft)}
+figcaption{margin:10px 0 0;font-size:14.5px;line-height:1.45;color:var(--muted);max-width:760px}
+.pair{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.pair div span{display:block;margin:8px 0 0;font:700 italic 18px/1 'Barlow Condensed'}
+.chart{width:100%;background:var(--soft);border-radius:10px;padding:14px 14px 8px}
+.chart svg{width:100%;overflow:visible}
+.chart text{font:500 12.5px 'Barlow Condensed';fill:var(--muted);letter-spacing:.02em}
+.chart .key{font:700 13.5px 'Barlow Condensed';letter-spacing:.02em}
+pre{margin:22px 0 0;background:var(--ink);color:#eee;border-radius:10px;padding:18px 20px;overflow:auto;font:13.5px/1.6 ui-monospace,SFMono-Regular,Menlo,monospace}
+pre .c{color:#9a938b} pre .k{color:#ff9a5a}
+code{font:.88em ui-monospace,SFMono-Regular,Menlo,monospace;background:var(--soft2);padding:1px 5px;border-radius:4px}
+blockquote{margin:0 0 18px;padding:2px 0 2px 18px;border-left:3px solid var(--orange);max-width:700px;font:600 italic 22px/1.3 'Barlow Condensed';color:var(--ink)}
+blockquote cite{display:block;margin-top:6px;font:500 normal 14.5px/1 Barlow;color:var(--muted)}
+table{border-collapse:collapse;width:100%;font-size:15px}
+th,td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font:700 14px/1.2 'Barlow Condensed';letter-spacing:.04em;text-transform:uppercase;color:var(--muted)}
+td.r,th.r{text-align:right}
+.tbl{overflow-x:auto;margin:22px 0 0}
+details{margin:18px 0 0}
+summary{cursor:pointer;font:700 17px/1 'Barlow Condensed';letter-spacing:.02em;padding:10px 0;color:var(--ink)}
+summary:hover{color:var(--orange)}
+#evtable{font-size:14px} #evtable td:last-child{min-width:320px;color:var(--ink2)}
+.t{display:inline-block;font:800 italic 13px/1 'Barlow Condensed';padding:4px 6px 3px;border-radius:4px;color:#fff}
+.t.CUT{background:var(--orange)} .t.HIT{background:var(--red)} .t.MOVE{background:var(--cyan)} .t.STAG{background:var(--green)}
+
+/* footer */
+footer{margin:96px 0 0;padding:40px 0 56px;border-top:1px solid var(--line);font-size:15.5px;color:var(--ink2)}
+.foot{display:grid;grid-template-columns:1.4fr 1fr;gap:28px 48px}
+.foot p{margin:0 0 10px;max-width:640px}
+.foot nav{display:flex;flex-direction:column;gap:8px;font:700 18px/1.2 'Barlow Condensed';letter-spacing:.02em}
+.foot nav a{text-decoration:none} .foot nav a:hover{text-decoration:underline}
+
+@media (max-width:980px){ .stats{grid-template-columns:repeat(3,1fr)} }
+@media (max-width:760px){
+  :root{--gut:16px}
+  body{font-size:16.5px}
+  .top nav{gap:14px}
+  .crumbs span,.crumbs b{display:none}
+  .hero{padding:26px 0 24px}
+  section{padding:64px 0 0}
+  .bm{padding:12px 10px 12px}
+  .stats{grid-template-columns:repeat(2,1fr)}
+  .step{grid-template-columns:minmax(0,1fr);padding-top:34px;margin-top:34px}
+  .step .n{font-size:52px;margin:0 0 10px}
+  .pair{grid-template-columns:1fr}
+  .foot{grid-template-columns:1fr}
+  .sbs{aspect-ratio:16/9}
+  .sbs-labels{display:none}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <div class="crumbs"><a href="/">marceloeduardo.com</a><span>/</span><span>funslop</span><span>/</span><b>eye for you</b></div>
+    <nav><a data-gh href="{{github}}">github</a><a href="player/" target="_blank" rel="noopener">full window ↗</a></nav>
+  </header>
+
+  <div class="hero">
+    <p class="eyebrow">funslop · september 2026</p>
+    <h1><span class="o">eye</span> for you</h1>
+    <p class="lede">The 1998 EYE4U Flash intro, rebuilt frame by frame as live code, with every cut landing on a downbeat of its original soundtrack. Directed by Marcelo, made by Claude.</p>
+  </div>
+
+  <div class="frame"><iframe id="player" src="player/" title="EYE4U, rebuilt: live player" allow="autoplay; fullscreen" allowfullscreen></iframe></div>
+  <div class="links">
+    <a class="btn primary" href="player/" target="_blank" rel="noopener">open full window ↗</a>
+    <a class="btn" href="media/eye4u_rebuild_1080p60.mp4" download>video · 1080p60 <small>MP4 · {{size_mp4}}</small></a>
+    <a class="btn" href="media/eye4u.html" download>offline copy <small>one HTML file · {{size_html}}</small></a>
+    <a class="btn" data-gh href="{{github}}">source code <small>GitHub</small></a>
+  </div>
+
+  <section id="beatmap">
+    <div class="sec-head">
+      <h2>the beat map</h2>
+      <p>This follows the player above. It scrolls through the grid Claude fitted to the soundtrack: bars, beats, the kicks it detected and all {{events}} catalogued events. Click anywhere to jump there.</p>
+    </div>
+    <div class="bm">
+      <div class="readout">
+        <span class="chip blk" id="rBlock">intro</span>
+        <span class="chip" id="rBpm">– bpm</span>
+        <span class="chip num" id="rBar">bar – · beat –</span>
+        <span class="chip num" id="rTime">0:00.00</span>
+      </div>
+      <canvas id="lane" aria-label="Scrolling beat grid around the current time"></canvas>
+      <canvas id="overview" aria-label="Whole piece: sections, energy per bar and cuts. Click to jump."></canvas>
+      <div class="now"><span class="tag" id="nTag">–</span><span id="nWhat" class="muted">Press play in the frame above.</span></div>
+      <div class="legend">
+        <span><i class="sw down"></i>downbeat</span><span><i class="sw beat"></i>beat</span>
+        <span><i class="sw env"></i>kick-drum energy</span><span><i class="sw kick"></i>detected kick</span>
+        <span><i class="sw cut"></i>cut</span><span><i class="sw dia" style="background:var(--red)"></i>hit</span>
+        <span><i class="sw dia" style="background:var(--cyan)"></i>move</span><span><i class="sw dia" style="background:var(--green)"></i>stagger</span>
+        <span><i class="sw miss"></i>distance to its beat</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="numbers">
+    <div class="stats">
+      <div class="stat"><b class="num">135.1</b><span>BPM in 4/4, re-fitted in {{blocks}} blocks</span></div>
+      <div class="stat"><b class="num">{{kicks}}</b><span>kick drums detected in the soundtrack</span></div>
+      <div class="stat"><b class="num">{{events}}</b><span>events catalogued from {{frames_fmt}} frames</span></div>
+      <div class="stat"><b class="num">{{cut}}</b><span>cuts, each exactly on a downbeat</span></div>
+      <div class="stat"><b class="num">{{now_med}}<small>ms</small></b><span>median off-beat for other hits (1998: {{old_med}}&nbsp;ms)</span></div>
+      <div class="stat"><b class="num">0.2<small>ms</small></b><span>picture-to-sound sync on this page</span></div>
+    </div>
+  </section>
+
+  <section id="compare">
+    <div class="sec-head">
+      <h2>then and now</h2>
+      <p>The same soundtrack under both. The rebuild is time-warped onto the beat, so the two drift apart by a few frames and meet again at every cut.</p>
+    </div>
+    <div class="sbs"><video controls playsinline preload="metadata" poster="media/sbs_poster.jpg"><source src="media/eye4u_side_by_side.mp4" type="video/mp4"></video></div>
+    <div class="sbs-labels"><span>1998 capture</span><span>rebuild</span></div>
+    <p class="cap">Left: the original site as screen-captured, 854 × 480, with the Flash player showing frames at an irregular 16–21 fps. Right: the rebuild, rendered at 1080p60. <a href="media/eye4u_side_by_side.mp4" download>Download the side-by-side</a> ({{size_sbs}}).</p>
+  </section>
+
+  <section id="process">
+    <div class="sec-head"><h2>how it was made</h2></div>
+    <p class="intro">Everything here was made by Claude, Anthropic's AI model, working as an agent in Claude Code. It watched the capture frame by frame, listened to the track, wrote its own analysis and measuring tools, built the animation and the renderer, and checked each result against the original. Marcelo directed in a handful of plain-English notes and judged what came back. The rule throughout was to measure, never guess.</p>
+
+    <ol class="steps">
+      <li class="step"><div class="n">01</div><div>
+        <h3>watch</h3>
+        <p>The 84.9-second capture (854 × 480, 30 fps) was split into its {{frames_fmt}} frames and read as contact sheets. Every change on screen went into a catalogue with its time and a one-line description: {{events}} events, made up of {{hit}} hits, {{move}} moves, {{stag}} staggered builds and {{cut}} hard cuts.</p>
+        <figure><img src="img/mosaic.jpg" width="{{mosaic_w}}" height="{{mosaic_h}}" loading="lazy" alt="Fifty frames of the 1998 capture in a grid"><figcaption>The whole capture at a glance, one frame every 1.7 seconds.</figcaption></figure>
+      </div></li>
+
+      <li class="step"><div class="n">02</div><div>
+        <h3>listen</h3>
+        <p>The soundtrack was taken apart in Python with numpy and librosa: first a harmonic/percussive split, then spectral flux per frequency bin to find the kick drum. A single matched filter failed because the kick band ripples, so the detector works bin by bin. It found {{kicks}} kicks.</p>
+        <p>The tempo is 135.1 BPM in 4/4. But the site restarts its music loop at every section change, so a single grid would drift. Instead the grid is re-anchored and re-fitted in {{blocks}} blocks, each landing within {{res_lo}}–{{res_hi}}&nbsp;ms (median) of its kicks. The beat map above is this grid.</p>
+        <div class="tbl"><table id="blocks"><thead><tr><th>block</th><th>section</th><th class="r">starts</th><th class="r">bpm</th><th class="r">kicks on grid</th><th class="r">median error</th></tr></thead><tbody></tbody></table></div>
+      </div></li>
+
+      <li class="step"><div class="n">03</div><div>
+        <h3>storyboard</h3>
+        <p>Before writing any animation, Claude laid all {{events}} events on the grid as a storyboard. Each event got a rule: cuts go on downbeats, interface hits on beats or eighths, and a few stay where they were. Marcelo approved the storyboard before any code was written.</p>
+        <p>The chart below shows how far each event sits from the beat, in the 1998 original and in the rebuild.</p>
+        <figure><div class="chart" id="cOff"></div><figcaption>Distance from the nearest beat (or eighth, for events meant for eighths) for the {{n_soft}} non-cut events. In 1998 the median was {{old_med}}&nbsp;ms; in the rebuild it is {{now_med}}&nbsp;ms. The {{cut}} cuts, not shown here, land exactly on their downbeats.</figcaption></figure>
+        <details><summary>All {{events}} events ↓</summary><div class="tbl"><table id="evtable"><thead><tr><th>id</th><th>type</th><th>rule</th><th class="r">1998</th><th class="r">beat</th><th class="r">rebuild vs beat</th><th>on screen</th></tr></thead><tbody></tbody></table></div></details>
+      </div></li>
+
+      <li class="step"><div class="n">04</div><div>
+        <h3>build</h3>
+        <p>The rebuild is one HTML page with one SVG stage, drawn in the capture's own 854 × 480 units and scaled to 1080p. A single pure function, <code>seek(t)</code>, computes every attribute from the time. There are no CSS animations, no timers and no state carried from frame to frame, so any frame can be drawn in any order and always comes out the same. The outlines were traced from the capture's pixels and fitted to circles and ellipses wherever they were geometric.</p>
+<pre><span class="k">async</span> <span class="k">function</span> seek(t) {                 <span class="c">// the only entry point</span>
+  <span class="k">const</span> s = warp(t);                     <span class="c">// rebuild time → 1998 time</span>
+  <span class="k">for</span> (<span class="k">const</span> sc <span class="k">of</span> SCENES) {
+    <span class="k">const</span> on = active(sc.windows, s);
+    show(sc.g, on);
+    <span class="k">if</span> (on) sc.draw(s, t);               <span class="c">// every attribute, from time alone</span>
+  }
+  drawCursor(s, t);
+  <span class="k">await</span> Promise.all(PENDING);            <span class="c">// wait for image decodes</span>
+}</pre>
+        <figure><img src="img/shapes.jpg" width="{{shapes_w}}" height="{{shapes_h}}" loading="lazy" alt="Traced outlines drawn over source frames"><figcaption>Traced outlines (dashed) checked against source frames.</figcaption></figure>
+      </div></li>
+
+      <li class="step"><div class="n">05</div><div>
+        <h3>time warp</h3>
+        <p>Snapping each event straight onto its beat made the motion stutter. So the rebuild plays the original animation through a time warp: one smooth curve from rebuild time to 1998 time, solved as a quadratic program with OSQP.</p>
+        <p>Cuts are hard constraints, so they land exactly on their downbeats. Playback speed stays between 0.5× and 2.3×, and it changes by at most 1.4% per 1/120&nbsp;s, so you never see it step. Within those limits, {{n_anch}} events are pulled toward their beats as soft targets and land a median {{soft_med}}&nbsp;ms away (worst {{soft_max}}&nbsp;ms). The other {{n_free}} would have forced time to run backwards or past the speed limit, so they ride along between their neighbours.</p>
+        <figure><div class="chart" id="cSpeed"></div><figcaption>How fast the 1998 animation plays inside the rebuild (1 = original speed). Orange ticks mark the cuts.</figcaption></figure>
+      </div></li>
+
+      <li class="step"><div class="n">06</div><div>
+        <h3>measure motion</h3>
+        <p>Motion that is hard to keyframe by hand was measured instead. The drop spin, the iris and the red sunburst were fitted frame by frame by silhouette matching.</p>
+        <p>The flower and the eye were rebuilt as the Flash tweens they originally were. The flower rides one cubic Bézier motion guide, eased by arc length, with a constant spin. The eye is three chained tweens. The 1998 player showed frames at an irregular 16–21 fps, so every measurement was first re-timed onto a steady Flash-frame clock, and only then fitted.</p>
+        <figure><div class="pair">
+          <div><img src="img/flower_src.jpg" width="{{flower_src_w}}" height="{{flower_src_h}}" loading="lazy" alt="Flower path in the 1998 capture, all frames overlaid"><span>1998 capture</span></div>
+          <div><img src="img/flower_new.jpg" width="{{flower_new_w}}" height="{{flower_new_h}}" loading="lazy" alt="Flower path in the rebuild, all frames overlaid"><span>rebuild</span></div>
+        </div><figcaption>The flower's flight with every frame overlaid. The 1998 player dropped and bunched frames; the rebuild samples the same arc evenly.</figcaption></figure>
+      </div></li>
+
+      <li class="step"><div class="n">07</div><div>
+        <h3>smooth</h3>
+        <blockquote>“everything is janky and motion is not smooth, shapes jump around each frame. review it frame by frame and make sure the motions are smooth and interpolation is perfect”<cite>Marcelo, on the first render</cite></blockquote>
+        <p>That note led Claude to build two meters. One is an audit that steps <code>seek()</code> at 60 Hz and flags every sudden change in an element's on-screen velocity. The other is an optical-flow jerk meter for rendered video.</p>
+        <p>The fixes were the smooth warp above; Bessel tangents instead of monotone splines, which stop and start at every key; stable slots for pooled shapes; and eased holds. Two more notes followed: the flower's arc dipped, and the eye trembled on its way in. Both were fixed by measuring the original again, not by adjusting by eye.</p>
+        <figure><div class="chart" id="cJerk"></div><figcaption>Frame-to-frame jerk from optical flow, as 1-second means. First render: mean {{jb_mean}}&nbsp;px, with {{jb_10}} frames above 10&nbsp;px. Released render: mean {{ja_mean}}&nbsp;px, with {{ja_10}} frames above 10&nbsp;px. {{ja_near}}% of those remaining frames sit within 0.15&nbsp;s of a catalogued event, where the original pops a shape in on purpose.</figcaption></figure>
+        <figure><img src="img/strips.jpg" width="{{strips_w}}" height="{{strips_h}}" loading="lazy" alt="Rows of consecutive rendered frames"><figcaption>Consecutive 60 fps frames from the render, each blended from 9 sub-frames.</figcaption></figure>
+      </div></li>
+
+      <li class="step"><div class="n">08</div><div>
+        <h3>render and ship</h3>
+        <p>For video, Playwright drives headless Chromium. Each 60 fps frame is the average of 9 sub-frames spread across a 180° shutter, blended with ffmpeg, and the soundtrack is normalised to −14 LUFS.</p>
+        <p>The player on this page renders live instead. The soundtrack is decoded once and played through Web Audio, and the picture clock follows the time actually reaching your speakers, to within about 0.2&nbsp;ms. That keeps every cut on its beat in the browser too.</p>
+      </div></li>
+    </ol>
+  </section>
+
+  <footer>
+    <div class="foot">
+      <div>
+        <p><b>Original site, animation and music:</b> EYE4U active media, Munich, 1998.</p>
+        <p><b>Rebuild:</b> Claude (Opus 5.5) in Claude Code, directed by Marcelo Jansson.</p>
+        <p class="muted">Made with numpy, scipy, librosa, OpenCV, OSQP, SVG, Playwright and ffmpeg: {{code}} lines of JavaScript and Python.</p>
+      </div>
+      <nav>
+        <a href="player/" target="_blank" rel="noopener">full-window player ↗</a>
+        <a data-gh href="{{github}}">source on GitHub ↗</a>
+        <a href="media/eye4u_rebuild_1080p60.mp4" download>video, 1080p60 ({{size_mp4}})</a>
+        <a href="media/eye4u_side_by_side.mp4" download>side-by-side ({{size_sbs}})</a>
+        <a href="/">marceloeduardo.com</a>
+      </nav>
+    </div>
+  </footer>
+</div>
+
+<script>
+const D = /*__DATA__*/null;
+const $ = id => document.getElementById(id);
+const NS = 'http://www.w3.org/2000/svg';
+const COL = { CUT: '#F15D08', HIT: '#C0000E', MOVE: '#0e9fb8', STAG: '#2f9e44' };
+const BLOCKCOL = { I: '#b9b2a9', A: '#F15D08', H1: '#C0000E', S: '#2f9e44', R: '#0e9fb8', E: '#F15D08', F: '#C0000E' };
+const fmt = t => { t = Math.max(0, t); const m = Math.floor(t / 60), s = t - m * 60; return `${m}:${s.toFixed(2).padStart(5, '0')}`; };
+const env = Uint8Array.from(atob(D.env), c => c.charCodeAt(0));
+const EV = D.ev.map(([id, scene, type, rule, src, target, at, what, anch]) => ({ id, scene, type, rule, src, target, at, what, anch }));
+const lastIdx = (arr, t, key) => { let lo = 0, hi = arr.length - 1, r = -1; while (lo <= hi) { const m = (lo + hi) >> 1; if (key(arr[m]) <= t) { r = m; lo = m + 1; } else hi = m - 1; } return r; };
+
+// ---------------------------------------------------------------- live beat map
+const frame = $('player');
+const P = () => { try { return frame.contentWindow && frame.contentWindow.player; } catch (e) { return null; } };
+const lane = $('lane'), ov = $('overview'), lc = lane.getContext('2d'), oc = ov.getContext('2d');
+let T = 0, drawnT = -1, dirty = true, LW = 1, OW = 1;
+const WIN = () => (innerWidth < 760 ? 3.6 : 6);            // seconds visible in the lane
+function fitCanvas(c, ctx) {
+  const dpr = Math.min(2, devicePixelRatio || 1), r = c.getBoundingClientRect();
+  c.width = Math.round(r.width * dpr); c.height = Math.round(r.height * dpr);
+  ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+  return r.width;
+}
+function resize() { LW = fitCanvas(lane, lc); OW = fitCanvas(ov, oc); dirty = true; }
+addEventListener('resize', resize);
+
+function drawLane(t) {
+  const W = LW, H = 230, win = WIN(), t0 = t - win / 2, t1 = t + win / 2;
+  const x = s => ((s - t0) / win) * W;
+  const base = 186, envH = 64;
+  lc.clearRect(0, 0, W, H);
+  // kick-drum energy
+  const i0 = Math.max(0, Math.floor(t0 * D.envHz)), i1 = Math.min(env.length - 1, Math.ceil(t1 * D.envHz));
+  lc.beginPath(); lc.moveTo(x(i0 / D.envHz), base);
+  for (let i = i0; i <= i1; i++) lc.lineTo(x(i / D.envHz), base - (env[i] / 255) * envH);
+  lc.lineTo(x(i1 / D.envHz), base); lc.closePath(); lc.fillStyle = '#e8e2da'; lc.fill();
+  // beats and bars
+  lc.font = "600 12.5px 'Barlow Condensed'"; lc.textBaseline = 'alphabetic';
+  let b = Math.max(0, lastIdx(D.beats, t0, r => r[0]));
+  for (; b < D.beats.length && D.beats[b][0] <= t1; b++) {
+    const [tb, down, bar] = D.beats[b], X = Math.round(x(tb)) + 0.5;
+    if (tb < t0) continue;
+    lc.fillStyle = down ? '#141414' : '#c9c2b9';
+    lc.fillRect(X - (down ? 1 : 0.5), down ? 26 : 44, down ? 2 : 1, base - (down ? 26 : 44));
+    if (down) { lc.fillStyle = '#141414'; lc.fillText(bar < 0 ? `intro ${bar + 9}` : `bar ${bar}`, X + 5, 20); }
+  }
+  // detected kicks
+  let k = Math.max(0, lastIdx(D.kicks, t0, r => r[0]));
+  lc.fillStyle = '#141414';
+  for (; k < D.kicks.length && D.kicks[k][0] <= t1; k++) {
+    const [tk, sk] = D.kicks[k]; if (tk < t0) continue;
+    lc.beginPath(); lc.arc(x(tk), base + 17, 1.8 + Math.min(1, sk) * 2.6, 0, 7); lc.fill();
+  }
+  // events: lanes by type; dashed line to the beat they aim for
+  const ROW = { HIT: 66, MOVE: 96, STAG: 126 };
+  lc.font = "700 12.5px 'Barlow Condensed'";
+  for (const e of EV) {
+    if (e.at < t0 - 1 || e.at > t1 + 1) continue;
+    const X = x(e.at), c = COL[e.type];
+    if (e.type === 'CUT') {
+      lc.fillStyle = c; lc.fillRect(X - 1.5, 26, 3, base - 26);
+      const label = `cut ${e.id}`, w = lc.measureText(label).width + 12;
+      lc.beginPath(); lc.roundRect ? lc.roundRect(X + 4, 30, w, 19, 4) : lc.rect(X + 4, 30, w, 19); lc.fill();
+      lc.fillStyle = '#fff'; lc.fillText(label, X + 10, 44);
+      continue;
+    }
+    const y = ROW[e.type] || 66;
+    if (e.anch && e.rule !== 'keep' && Math.abs(e.at - e.target) > 0.008) {
+      lc.strokeStyle = c; lc.globalAlpha = 0.7; lc.setLineDash([3, 3]); lc.lineWidth = 1.2;
+      lc.beginPath(); lc.moveTo(X, y); lc.lineTo(x(e.target), y); lc.stroke();
+      lc.setLineDash([]); lc.beginPath(); lc.moveTo(x(e.target), y - 5); lc.lineTo(x(e.target), y + 5); lc.stroke(); lc.globalAlpha = 1;
+    }
+    lc.fillStyle = c; lc.beginPath(); lc.moveTo(X, y - 7); lc.lineTo(X + 7, y); lc.lineTo(X, y + 7); lc.lineTo(X - 7, y); lc.closePath(); lc.fill();
+    lc.fillStyle = '#141414'; lc.fillText(e.id, X + 10, y + 4.5);
+  }
+  // the past, veiled; the playhead
+  lc.fillStyle = 'rgba(255,255,255,.55)'; lc.fillRect(0, 0, W / 2, H);
+  lc.fillStyle = '#141414'; lc.fillRect(Math.round(W / 2) - 1, 0, 2, H);
+  lc.beginPath(); lc.moveTo(W / 2 - 6, 0); lc.lineTo(W / 2 + 6, 0); lc.lineTo(W / 2, 8); lc.fill();
+  // time ticks
+  lc.fillStyle = '#9a938b'; lc.font = "500 12px 'Barlow Condensed'";
+  for (let s = Math.ceil(t0); s <= t1; s++) if (s >= 0 && s <= D.dur) lc.fillText(`${s}s`, x(s) + 3, H - 6);
+}
+
+function drawOverview(t) {
+  const W = OW, H = 64, x = s => (s / D.dur) * W;
+  oc.clearRect(0, 0, W, H);
+  for (const [key, name, a, b2] of D.blocks) {
+    oc.fillStyle = BLOCKCOL[key]; oc.globalAlpha = 0.16; oc.fillRect(x(a), 0, x(b2) - x(a), 16); oc.globalAlpha = 1;
+    oc.fillStyle = '#3a3733'; oc.font = "700 11.5px 'Barlow Condensed'"; oc.fillText(key, x(a) + 4, 12);
+  }
+  for (const [bar, blk, tb, len, db] of D.bars) {           // energy per bar
+    const h = Math.max(2, Math.min(1, (db + 30) / 26) * 36);
+    oc.fillStyle = '#d6cfc6'; oc.fillRect(x(tb) + 0.5, H - 6 - h, Math.max(1, x(tb + len) - x(tb) - 1), h);
+  }
+  oc.fillStyle = COL.CUT;
+  for (const e of EV) if (e.type === 'CUT') oc.fillRect(x(e.at) - 1, 16, 2, H - 22);
+  const win = WIN();
+  oc.fillStyle = 'rgba(20,20,20,.08)'; oc.fillRect(x(t - win / 2), 16, x(win), H - 16);
+  oc.fillStyle = '#141414'; oc.fillRect(x(t) - 1, 0, 2, H);
+}
+
+function readout(t) {
+  const bi = D.blocks.findIndex(b => t >= b[2] && t < b[3]); const blk = D.blocks[bi < 0 ? D.blocks.length - 1 : bi];
+  $('rBlock').textContent = `${blk[0]} · ${blk[1]}`;
+  $('rBpm').textContent = `${blk[4].toFixed(2)} bpm`;
+  const bIdx = lastIdx(D.beats, t + 1e-4, r => r[0]);
+  if (bIdx >= 0) { const [, , bar, beat] = D.beats[bIdx]; $('rBar').textContent = bar < 0 ? `intro · count ${bar + 9}.${beat}` : `bar ${bar} · beat ${beat}`; }
+  $('rTime').textContent = fmt(t);
+  const eIdx = lastIdx(EV, t + 0.02, e => e.at);
+  if (eIdx >= 0) { const e = EV[eIdx]; const tag = $('nTag'); tag.textContent = e.id; tag.style.background = COL[e.type]; $('nWhat').textContent = e.what; $('nWhat').classList.remove('muted'); }
+}
+
+function loop() {
+  const p = P(); if (p) T = p.time;
+  if (T !== drawnT || dirty) { drawLane(T); drawOverview(T); readout(T); drawnT = T; dirty = false; }
+  requestAnimationFrame(loop);
+}
+function seekTo(t) { t = Math.max(0, Math.min(D.dur, t)); const p = P(); if (p) p.seek(t); T = t; dirty = true; }
+lane.addEventListener('click', e => { const r = lane.getBoundingClientRect(); seekTo(T + ((e.clientX - r.left) / r.width - 0.5) * WIN()); });
+let drag = false;
+const ovSeek = e => { const r = ov.getBoundingClientRect(); seekTo(((e.clientX - r.left) / r.width) * D.dur); };
+ov.addEventListener('pointerdown', e => { drag = true; ov.setPointerCapture(e.pointerId); ovSeek(e); });
+ov.addEventListener('pointermove', e => { if (drag) ovSeek(e); });
+ov.addEventListener('pointerup', () => { drag = false; });
+document.fonts.ready.then(() => { resize(); requestAnimationFrame(loop); });
+
+// ---------------------------------------------------------------- tables
+$('blocks').tBodies[0].innerHTML = D.blocks.map(([k, name, a, , bpm, hits, on, res]) =>
+  `<tr><td><b>${k}</b></td><td>${name}</td><td class="r num">${fmt(a)}</td><td class="r num">${bpm.toFixed(2)}</td><td class="r num">${on} / ${hits}</td><td class="r num">${res.toFixed(1)} ms</td></tr>`).join('');
+const RULE = { down: 'downbeat', 'down+': 'downbeat', beat: 'beat', '8th': 'eighth', anchor: 'section start', keep: 'kept' };
+const esc = s => s.replace(/[&<>]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;' }[c]));
+$('evtable').tBodies[0].innerHTML = [...EV].sort((a, b) => a.src - b.src).map(e => {
+  const off = e.rule === 'keep' ? 'kept' : e.type !== 'CUT' && !e.anch ? 'rides along' : `${Math.round((e.at - e.target) * 1000)} ms`;
+  return `<tr><td><b>${e.id}</b></td><td><span class="t ${e.type}">${e.type.toLowerCase()}</span></td><td>${RULE[e.rule] || e.rule}</td><td class="r num">${e.src.toFixed(2)}</td><td class="r num">${e.target.toFixed(2)}</td><td class="r num">${off}</td><td>${esc(e.what)}</td></tr>`;
+}).join('');
+
+// ---------------------------------------------------------------- charts (SVG, redrawn on resize)
+function S(tag, attrs, parent) { const el = document.createElementNS(NS, tag); for (const k in attrs) el.setAttribute(k, attrs[k]); if (parent) parent.appendChild(el); return el; }
+function frameSVG(box, h, pad) {
+  box.innerHTML = ''; const w = box.clientWidth - 28;
+  const svg = S('svg', { viewBox: `0 0 ${w} ${h}`, height: h }, box);
+  return { svg, w, h, X0: pad[3], X1: w - pad[1], Y0: pad[0], Y1: h - pad[2] };
+}
+function axisX(f, lo, hi, ticks, label, xf) {
+  for (const v of ticks) { const X = xf(v); S('line', { x1: X, x2: X, y1: f.Y0, y2: f.Y1, stroke: '#e3ddd5' }, f.svg); S('text', { x: X, y: f.Y1 + 16, 'text-anchor': 'middle' }, f.svg).textContent = label(v); }
+}
+function chartOff() {
+  const f = frameSVG($('cOff'), 226, [40, 8, 24, 36]);
+  const B = 20, lo = -240, hi = 240, nb = (hi - lo) / B;
+  const hist = arr => { const h = new Array(nb).fill(0); for (const v of arr) h[Math.min(nb - 1, Math.max(0, Math.floor((v - lo) / B)))]++; return h; };
+  const [h0, h1] = D.off.map(hist); const mx = Math.max(...h0, ...h1);
+  const xf = v => f.X0 + ((v - lo) / (hi - lo)) * (f.X1 - f.X0), yf = c => f.Y1 - (c / mx) * (f.Y1 - f.Y0);
+  axisX(f, lo, hi, [-200, -100, 0, 100, 200], v => (v > 0 ? '+' : '') + v + ' ms', xf);
+  for (let c = 0; c <= mx; c += Math.ceil(mx / 4)) S('text', { x: f.X0 - 8, y: yf(c) + 4, 'text-anchor': 'end' }, f.svg).textContent = c;
+  const bw = (f.X1 - f.X0) / nb;
+  h0.forEach((c, i) => c && S('rect', { x: f.X0 + i * bw + 1, y: yf(c), width: bw / 2 - 1, height: f.Y1 - yf(c), fill: '#bdb5ab', rx: 1.5 }, f.svg));
+  h1.forEach((c, i) => c && S('rect', { x: f.X0 + i * bw + bw / 2, y: yf(c), width: bw / 2 - 1, height: f.Y1 - yf(c), fill: '#F15D08', rx: 1.5 }, f.svg));
+  S('line', { x1: xf(0), x2: xf(0), y1: f.Y0 - 6, y2: f.Y1, stroke: '#141414', 'stroke-width': 1.5 }, f.svg);
+  S('text', { x: xf(0) + 6, y: f.Y0 - 10, class: 'key', fill: '#141414' }, f.svg).textContent = 'on the beat';
+  S('rect', { x: f.X0, y: 2, width: 10, height: 10, fill: '#bdb5ab', rx: 2 }, f.svg); S('text', { x: f.X0 + 15, y: 11, class: 'key', fill: '#3a3733' }, f.svg).textContent = '1998 original';
+  S('rect', { x: f.X0 + 112, y: 2, width: 10, height: 10, fill: '#F15D08', rx: 2 }, f.svg); S('text', { x: f.X0 + 127, y: 11, class: 'key', fill: '#3a3733' }, f.svg).textContent = 'rebuild';
+}
+function chartSpeed() {
+  const f = frameSVG($('cSpeed'), 200, [18, 8, 24, 36]);
+  const lo = 0.4, hi = 2.4, xf = t => f.X0 + (t / D.dur) * (f.X1 - f.X0), yf = v => f.Y1 - ((v - lo) / (hi - lo)) * (f.Y1 - f.Y0);
+  axisX(f, 0, D.dur, [0, 10, 20, 30, 40, 50, 60, 70, 80], v => v + 's', xf);
+  for (const v of [0.5, 1, 1.5, 2, 2.3]) {
+    S('line', { x1: f.X0, x2: f.X1, y1: yf(v), y2: yf(v), stroke: v === 1 ? '#8f877e' : '#e3ddd5', 'stroke-dasharray': v === 0.5 || v === 2.3 ? '4 4' : '' }, f.svg);
+    S('text', { x: f.X0 - 8, y: yf(v) + 4, 'text-anchor': 'end' }, f.svg).textContent = v + '×';
+  }
+  let d = ''; D.speed.forEach((v, i) => { d += (i ? 'L' : 'M') + xf(i / D.speedHz).toFixed(1) + ' ' + yf(v).toFixed(1); });
+  S('path', { d, fill: 'none', stroke: '#141414', 'stroke-width': 1.6, 'stroke-linejoin': 'round' }, f.svg);
+  for (const e of EV) if (e.type === 'CUT') S('rect', { x: xf(e.at) - 1, y: f.Y0 - 12, width: 2, height: 9, fill: '#F15D08' }, f.svg);
+}
+function chartJerk() {
+  const f = frameSVG($('cJerk'), 200, [24, 8, 24, 36]);
+  const hi = 20, xf = t => f.X0 + (t / D.dur) * (f.X1 - f.X0), yf = v => f.Y1 - (Math.min(hi, v) / hi) * (f.Y1 - f.Y0);
+  axisX(f, 0, D.dur, [0, 10, 20, 30, 40, 50, 60, 70, 80], v => v + 's', xf);
+  for (const v of [0, 5, 10, 15, 20]) S('text', { x: f.X0 - 8, y: yf(v) + 4, 'text-anchor': 'end' }, f.svg).textContent = v + (v === 20 ? ' px' : '');
+  const line = (arr, stroke, fill) => {
+    let d = `M${xf(0)} ${f.Y1}`; arr.forEach((v, i) => { d += `L${xf(i + 0.5).toFixed(1)} ${yf(v).toFixed(1)}`; }); d += `L${xf(D.dur)} ${f.Y1}Z`;
+    S('path', { d, fill, stroke, 'stroke-width': 1.4, 'stroke-linejoin': 'round' }, f.svg);
+  };
+  line(D.jerk[0], '#a39b91', 'rgba(163,155,145,.18)');
+  line(D.jerk[1], '#F15D08', 'rgba(241,93,8,.22)');
+  S('rect', { x: f.X0, y: 2, width: 10, height: 10, fill: '#a39b91', rx: 2 }, f.svg); S('text', { x: f.X0 + 15, y: 11, class: 'key', fill: '#3a3733' }, f.svg).textContent = 'first render';
+  S('rect', { x: f.X0 + 102, y: 2, width: 10, height: 10, fill: '#F15D08', rx: 2 }, f.svg); S('text', { x: f.X0 + 117, y: 11, class: 'key', fill: '#3a3733' }, f.svg).textContent = 'released render';
+}
+function charts() { chartOff(); chartSpeed(); chartJerk(); }
+let rT = 0; addEventListener('resize', () => { clearTimeout(rT); rT = setTimeout(charts, 120); });
+document.fonts.ready.then(charts);
+</script>
+</body>
+</html>

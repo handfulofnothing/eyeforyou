@@ -1,0 +1,79 @@
+[
+ {
+  "key": "I",
+  "name": "intro (pad + arp)",
+  "start": 0.0,
+  "end": 12.9,
+  "bpm": 134.64,
+  "anchor": 0.0,
+  "hits": 12,
+  "on_grid": 7,
+  "med_res_ms": 1.4
+ },
+ {
+  "key": "A",
+  "name": "drums in: logo zoom \u2192 welcome",
+  "start": 12.9,
+  "end": 22.6,
+  "bpm": 135.03,
+  "anchor": 12.8709,
+  "hits": 18,
+  "on_grid": 14,
+  "med_res_ms": 2.6
+ },
+ {
+  "key": "H1",
+  "name": "hub build",
+  "start": 22.6,
+  "end": 29.0,
+  "bpm": 134.96,
+  "anchor": 22.5981,
+  "hits": 6,
+  "on_grid": 5,
+  "med_res_ms": 6.8
+ },
+ {
+  "key": "S",
+  "name": "special + hub return",
+  "start": 29.0,
+  "end": 44.53,
+  "bpm": 135.18,
+  "anchor": 28.9424,
+  "hits": 49,
+  "on_grid": 42,
+  "med_res_ms": 4.2
+ },
+ {
+  "key": "R",
+  "name": "showroom",
+  "start": 44.53,
+  "end": 56.23,
+  "bpm": 135.61,
+  "anchor": 44.5397,
+  "hits": 39,
+  "on_grid": 37,
+  "med_res_ms": 5.0
+ },
+ {
+  "key": "E",
+  "name": "showroom \u2192 hub",
+  "start": 56.23,
+  "end": 63.2,
+  "bpm": 135.13,
+  "anchor": 56.2711,
+  "hits": 16,
+  "on_grid": 15,
+  "med_res_ms": 4.2
+ },
+ {
+  "key": "F",
+  "name": "info&contact \u2192 hub",
+  "start": 63.2,
+  "end": 84.87,
+  "bpm": 135.1,
+  "anchor": 63.1344,
+  "hits": 58,
+  "on_grid": 52,
+  "med_res_ms": 5.5
+ }
+]

@@ -1,0 +1,1084 @@
+[
+ {
+  "id": "I1",
+  "scene": "Intro",
+  "t": 0.0,
+  "rule": "keep",
+  "type": "HIT",
+  "what": "White field. \"Open your eyes\" (grey condensed oblique) and \"skip\" (bottom right) already on screen",
+  "thumb": 0.3
+ },
+ {
+  "id": "I2",
+  "scene": "Intro",
+  "t": 0.8,
+  "rule": "beat",
+  "type": "HIT",
+  "what": "\"EYE\" pops in, deep red, wide tracking",
+  "thumb": 1.0
+ },
+ {
+  "id": "I3",
+  "scene": "Intro",
+  "t": 3.367,
+  "rule": "beat",
+  "type": "HIT",
+  "what": "Tagline 4-frame ghost-morph lands on \"see and hear...\"; \"4U\" pops in black",
+  "thumb": 3.4
+ },
+ {
+  "id": "I4",
+  "scene": "Intro",
+  "t": 3.4,
+  "rule": "beat",
+  "type": "MOVE",
+  "dur": 1.0,
+  "what": "\"4U\" tints black to orange over 2 beats",
+  "thumb": 4.3
+ },
+ {
+  "id": "I5",
+  "scene": "Intro",
+  "t": 5.933,
+  "rule": "beat",
+  "type": "HIT",
+  "what": "Eye mark (black almond) pops in right of \"4U\"",
+  "thumb": 5.95
+ },
+ {
+  "id": "I6",
+  "scene": "Intro",
+  "t": 6.167,
+  "rule": "beat",
+  "type": "HIT",
+  "what": "Tagline morph lands on \"the web eye like!\" (\"eye\" in orange); eye mark tints to maroon and red iris",
+  "thumb": 6.2
+ },
+ {
+  "id": "I7",
+  "scene": "Intro",
+  "t": 6.367,
+  "rule": "8th",
+  "type": "HIT",
+  "what": "Orange ring snaps around the eye; ACTIVE MEDIA striped bar snaps under the logo",
+  "thumb": 6.5
+ },
+ {
+  "id": "I8",
+  "scene": "Intro",
+  "t": 7.733,
+  "rule": "down",
+  "type": "MOVE",
+  "dur": 1.07,
+  "what": "Shimmer 1: pink wash sweeps left to right across the logo",
+  "thumb": 8.25
+ },
+ {
+  "id": "I9",
+  "scene": "Intro",
+  "t": 9.4,
+  "rule": "down",
+  "type": "MOVE",
+  "dur": 0.63,
+  "what": "Shimmer 2 (shorter, lighter)",
+  "thumb": 9.75
+ },
+ {
+  "id": "I10",
+  "scene": "Intro",
+  "t": 10.667,
+  "rule": "beat",
+  "type": "HIT",
+  "what": "Tagline fades out (lands on the beat); logo holds alone",
+  "thumb": 11.5
+ },
+ {
+  "id": "A1",
+  "scene": "Transition 1: into welcome",
+  "t": 12.9,
+  "rule": "anchor",
+  "block": "A",
+  "type": "CUT",
+  "what": "THE DROP. Drums enter; eye mark zooms at camera, tilting; black pupil and orange ring sweep across",
+  "thumb": 13.0
+ },
+ {
+  "id": "A2",
+  "scene": "Transition 1: into welcome",
+  "t": 13.6,
+  "rule": "beat",
+  "type": "MOVE",
+  "dur": 0.4,
+  "what": "Orange wedges tumble; logo glimpsed behind",
+  "thumb": 13.8
+ },
+ {
+  "id": "A3",
+  "scene": "Transition 1: into welcome",
+  "t": 14.0,
+  "rule": "beat",
+  "type": "MOVE",
+  "dur": 0.47,
+  "what": "Full orange; black curtain drops from the top",
+  "thumb": 14.3
+ },
+ {
+  "id": "A4",
+  "scene": "Transition 1: into welcome",
+  "t": 14.47,
+  "rule": "down",
+  "type": "HIT",
+  "what": "Black lands on the bar-2 downbeat; red flower in a cyan 4-point star spins and shrinks toward centre-left",
+  "thumb": 14.6
+ },
+ {
+  "id": "A5",
+  "scene": "Transition 1: into welcome",
+  "t": 15.4,
+  "rule": "beat",
+  "type": "HIT",
+  "what": "Mint iris dot (white and orange rims) appears and opens to full frame",
+  "thumb": 15.5
+ },
+ {
+  "id": "A6",
+  "scene": "Transition 1: into welcome",
+  "t": 15.67,
+  "rule": "8th",
+  "type": "MOVE",
+  "dur": 0.93,
+  "what": "Mint field: small eye floats in and grows; white arc sweeps",
+  "thumb": 16.2
+ },
+ {
+  "id": "A7",
+  "scene": "Transition 1: into welcome",
+  "t": 16.6,
+  "rule": "beat",
+  "type": "MOVE",
+  "dur": 0.5,
+  "what": "Eye zooms through the camera; the pupil becomes the red field",
+  "thumb": 16.9,
+  "force": 9
+ },
+ {
+  "id": "A8",
+  "scene": "Transition 1: into welcome",
+  "t": 17.1,
+  "rule": "beat",
+  "type": "HIT",
+  "what": "Red lands; white asterisk blooms into a white and orange sunburst",
+  "thumb": 17.25
+ },
+ {
+  "id": "A9",
+  "scene": "Transition 1: into welcome",
+  "t": 17.2,
+  "rule": "beat",
+  "type": "MOVE",
+  "dur": 2.1,
+  "what": "Sunburst rotates while its centre wanders across frame",
+  "thumb": 18.5
+ },
+ {
+  "id": "A10",
+  "scene": "Transition 1: into welcome",
+  "t": 19.3,
+  "rule": "beat",
+  "type": "MOVE",
+  "dur": 0.7,
+  "what": "Push into the rays; white and red wedges exit right",
+  "thumb": 19.75
+ },
+ {
+  "id": "A11",
+  "scene": "Welcome",
+  "t": 20.0,
+  "rule": "down",
+  "type": "CUT",
+  "what": "White. \"welcome!\" slides in, top centre",
+  "thumb": 20.25
+ },
+ {
+  "id": "A12",
+  "scene": "Welcome",
+  "t": 20.3,
+  "rule": "beat",
+  "type": "MOVE",
+  "dur": 0.7,
+  "what": "Blurred pink eye rings fade up",
+  "thumb": 20.75
+ },
+ {
+  "id": "A13",
+  "scene": "Welcome",
+  "t": 21.0,
+  "rule": "beat",
+  "type": "HIT",
+  "what": "Eye rings snap sharp: red iris, orange ring, pale halos",
+  "thumb": 21.2
+ },
+ {
+  "id": "A14",
+  "scene": "Welcome",
+  "t": 21.3,
+  "rule": "beat",
+  "type": "MOVE",
+  "dur": 0.6,
+  "what": "Outer ring rushes the camera and becomes the orange hub frame; inner eye blurs out",
+  "thumb": 21.75
+ },
+ {
+  "id": "A15",
+  "scene": "Welcome",
+  "t": 22.2,
+  "rule": "beat",
+  "type": "HIT",
+  "what": "EYE4U WEB DESIGN logo (top right) and footer line appear; seed dot starts growing",
+  "thumb": 22.3
+ },
+ {
+  "id": "H1",
+  "scene": "Hub build",
+  "t": 22.6,
+  "rule": "anchor",
+  "block": "H1",
+  "type": "CUT",
+  "what": "Hub loop starts. Orange leader dot leaves the seed position",
+  "thumb": 22.62
+ },
+ {
+  "id": "H2",
+  "scene": "Hub build",
+  "t": 22.733,
+  "rule": "8th",
+  "type": "HIT",
+  "what": "\"info&contact\" label and cyan dot laid",
+  "thumb": 22.8
+ },
+ {
+  "id": "H3",
+  "scene": "Hub build",
+  "t": 22.8,
+  "rule": "8th",
+  "type": "STAG",
+  "dur": 0.87,
+  "what": "Leader climbs the arc laying 5 dots (cyan to green) in 8ths; \"showroom\" and \"special\" labels on beats",
+  "thumb": 23.4
+ },
+ {
+  "id": "H4",
+  "scene": "Hub build",
+  "t": 23.8,
+  "rule": "beat",
+  "type": "MOVE",
+  "dur": 0.4,
+  "what": "Leader drifts left, fading to peach",
+  "thumb": 24.0
+ },
+ {
+  "id": "H5",
+  "scene": "Hub build",
+  "t": 24.27,
+  "rule": "beat",
+  "type": "MOVE",
+  "dur": 0.33,
+  "what": "Eye photo fades in; peach dot dissolves over it",
+  "thumb": 24.6
+ },
+ {
+  "id": "H6",
+  "scene": "Hub idle",
+  "t": 26.67,
+  "rule": "beat",
+  "type": "HIT",
+  "what": "Cursor enters and glides to \"special\"",
+  "thumb": 26.7
+ },
+ {
+  "id": "H7",
+  "scene": "Hub idle",
+  "t": 27.07,
+  "rule": "beat",
+  "type": "HIT",
+  "what": "Hover \"special\": dot turns orange",
+  "thumb": 27.1
+ },
+ {
+  "id": "H8",
+  "scene": "Hub \u2192 special",
+  "t": 27.33,
+  "rule": "beat",
+  "type": "HIT",
+  "what": "CLICK \"special\": chain retracts into the special dot; other labels fade",
+  "thumb": 27.45
+ },
+ {
+  "id": "H9",
+  "scene": "Hub \u2192 special",
+  "t": 27.73,
+  "rule": "beat",
+  "type": "HIT",
+  "what": "Two peach dots shoot out left and right; green chain drops straight down; blurb text appears as the eye blurs away",
+  "thumb": 28.2
+ },
+ {
+  "id": "S1",
+  "scene": "Transition 2: special",
+  "t": 29.0,
+  "rule": "anchor",
+  "block": "S",
+  "type": "CUT",
+  "what": "Special loop starts. Special dot flashes into a big orange disc and snaps back",
+  "thumb": 29.03
+ },
+ {
+  "id": "S2",
+  "scene": "Transition 2: special",
+  "t": 29.2,
+  "rule": "8th",
+  "type": "HIT",
+  "what": "Cyan asterisk pops from the dot chain",
+  "thumb": 29.2
+ },
+ {
+  "id": "S3",
+  "scene": "Transition 2: special",
+  "t": 29.33,
+  "rule": "8th",
+  "type": "STAG",
+  "dur": 0.2,
+  "what": "Orange and peach dots scatter outward",
+  "thumb": 29.4
+ },
+ {
+  "id": "S4",
+  "scene": "Transition 2: special",
+  "t": 29.47,
+  "rule": "beat",
+  "type": "HIT",
+  "what": "Pale cyan sunburst blooms; green \"special\" spins in",
+  "thumb": 29.6
+ },
+ {
+  "id": "S5",
+  "scene": "Transition 2: special",
+  "t": 29.73,
+  "rule": "8th",
+  "type": "MOVE",
+  "dur": 0.6,
+  "what": "Push into \"special\": giant letters s-p-e-c-i fly past; grey ghost mirror text",
+  "thumb": 30.3
+ },
+ {
+  "id": "S6",
+  "scene": "Transition 2: special",
+  "t": 30.4,
+  "rule": "beat",
+  "type": "MOVE",
+  "dur": 0.8,
+  "what": "Orange and green arcs sweep and settle",
+  "thumb": 30.9
+ },
+ {
+  "id": "S7",
+  "scene": "Special page",
+  "t": 31.27,
+  "rule": "beat",
+  "type": "HIT",
+  "what": "Special page lands: orange left band, green arc bottom right, grey \"special\" watermark",
+  "thumb": 31.35
+ },
+ {
+  "id": "S8",
+  "scene": "Special page",
+  "t": 31.4,
+  "rule": "8th",
+  "type": "STAG",
+  "dur": 0.5,
+  "what": "Menu words fly in: free, screensaver, monitor, adjustment, then home and e-mail",
+  "thumb": 31.7
+ },
+ {
+  "id": "S9",
+  "scene": "Special page",
+  "t": 31.93,
+  "rule": "beat",
+  "type": "STAG",
+  "dur": 0.47,
+  "what": "Cyan bullets pop; peach dots run left and fade",
+  "thumb": 32.1
+ },
+ {
+  "id": "S10",
+  "scene": "Special page",
+  "t": 35.3,
+  "rule": "beat",
+  "type": "MOVE",
+  "dur": 2.5,
+  "what": "Ambient cyan blob drifts up across the page",
+  "thumb": 36.5
+ },
+ {
+  "id": "S11",
+  "scene": "Special \u2192 hub",
+  "t": 37.7,
+  "rule": "8th",
+  "type": "HIT",
+  "what": "CLICK \"home\"",
+  "thumb": 37.75
+ },
+ {
+  "id": "S12",
+  "scene": "Special \u2192 hub",
+  "t": 37.85,
+  "rule": "down",
+  "type": "CUT",
+  "what": "Hard cut to a cyan, green and orange sunburst",
+  "thumb": 37.95
+ },
+ {
+  "id": "S13",
+  "scene": "Special \u2192 hub",
+  "t": 38.2,
+  "rule": "8th",
+  "type": "MOVE",
+  "dur": 0.2,
+  "what": "Dark-green sunburst",
+  "thumb": 38.25
+ },
+ {
+  "id": "S14",
+  "scene": "Special \u2192 hub",
+  "t": 38.4,
+  "rule": "8th",
+  "type": "MOVE",
+  "dur": 0.33,
+  "what": "Black \"special\" zooms out, rotating",
+  "thumb": 38.6
+ },
+ {
+  "id": "S15",
+  "scene": "Special \u2192 hub",
+  "t": 38.8,
+  "rule": "8th",
+  "type": "HIT",
+  "what": "Hub frame returns (special chain only)",
+  "thumb": 38.9
+ },
+ {
+  "id": "S16",
+  "scene": "Hub idle",
+  "t": 38.9,
+  "rule": "beat",
+  "type": "STAG",
+  "dur": 1.2,
+  "what": "Chain retracts and regrows along the arc; labels fade in; eye sharpens by 41s",
+  "thumb": 39.75
+ },
+ {
+  "id": "S17",
+  "scene": "Hub \u2192 showroom",
+  "t": 42.6,
+  "rule": "beat",
+  "type": "HIT",
+  "what": "Hover \"showroom\"",
+  "thumb": 42.65,
+  "force": 30
+ },
+ {
+  "id": "S18",
+  "scene": "Hub \u2192 showroom",
+  "t": 42.73,
+  "rule": "beat",
+  "type": "HIT",
+  "what": "CLICK \"showroom\": chain retracts to the showroom dot",
+  "thumb": 42.9,
+  "force": 31
+ },
+ {
+  "id": "S19",
+  "scene": "Hub \u2192 showroom",
+  "t": 43.2,
+  "rule": "beat",
+  "type": "STAG",
+  "dur": 0.27,
+  "what": "Chain re-extends (2 dots up, 3 down); peach leader slides left",
+  "thumb": 43.3
+ },
+ {
+  "id": "S20",
+  "scene": "Hub \u2192 showroom",
+  "t": 43.47,
+  "rule": "8th",
+  "type": "HIT",
+  "what": "Blurb \"ENTER THE showroom TO VIEW MORE FLASH MADE BY EYE4U.\" replaces the eye",
+  "thumb": 43.8
+ },
+ {
+  "id": "R1",
+  "scene": "Transition 3: showroom",
+  "t": 44.533,
+  "rule": "anchor",
+  "block": "R",
+  "type": "CUT",
+  "what": "Showroom loop starts. Frame drops to white; \"showroom\" tilts up; green bubbles swell; cyan star on orange",
+  "thumb": 44.75
+ },
+ {
+  "id": "R2",
+  "scene": "Transition 3: showroom",
+  "t": 44.8,
+  "rule": "8th",
+  "type": "MOVE",
+  "dur": 0.67,
+  "what": "Cyan sunburst spins over the orange disc, pushing in",
+  "thumb": 45.2
+ },
+ {
+  "id": "R3",
+  "scene": "Transition 3: showroom",
+  "t": 45.47,
+  "rule": "beat",
+  "type": "HIT",
+  "what": "Black iris dot appears at centre and grows to cover the frame",
+  "thumb": 45.6,
+  "force": 3
+ },
+ {
+  "id": "R4",
+  "scene": "Transition 3: showroom",
+  "t": 45.767,
+  "rule": "keep",
+  "type": "HIT",
+  "what": "One-frame white flash (sits on the 16th before R5)",
+  "thumb": 45.77,
+  "abs": 46.277
+ },
+ {
+  "id": "R5",
+  "scene": "Transition 3: showroom",
+  "t": 45.867,
+  "rule": "down+",
+  "type": "CUT",
+  "what": "Hard cut to black: cyan, teal and ink bubble snakes stream in",
+  "thumb": 46.4
+ },
+ {
+  "id": "R6",
+  "scene": "Transition 3: showroom",
+  "t": 46.5,
+  "rule": "beat",
+  "type": "MOVE",
+  "dur": 1.1,
+  "what": "Bubbles swell, cluster and darken",
+  "thumb": 47.25
+ },
+ {
+  "id": "R7",
+  "scene": "Transition 3: showroom",
+  "t": 47.67,
+  "rule": "down",
+  "type": "HIT",
+  "what": "Orange leaf arc slices in from the left; teal bubble column descends",
+  "thumb": 47.9
+ },
+ {
+  "id": "R8",
+  "scene": "Transition 3: showroom",
+  "t": 48.6,
+  "rule": "beat",
+  "type": "MOVE",
+  "dur": 0.6,
+  "what": "Red, orange and peach curves wipe across",
+  "thumb": 48.8
+ },
+ {
+  "id": "R9",
+  "scene": "Showroom page",
+  "t": 49.2,
+  "rule": "beat",
+  "type": "HIT",
+  "what": "Page shape lands: red left arc, white field, orange right",
+  "thumb": 49.25
+ },
+ {
+  "id": "R10",
+  "scene": "Showroom page",
+  "t": 49.4,
+  "rule": "8th",
+  "type": "MOVE",
+  "dur": 0.2,
+  "what": "Red band flashes pink to red",
+  "thumb": 49.45
+ },
+ {
+  "id": "R11",
+  "scene": "Showroom page",
+  "t": 49.6,
+  "rule": "8th",
+  "type": "HIT",
+  "what": "\"showroom\" watermark and EYE4U logo",
+  "thumb": 49.65
+ },
+ {
+  "id": "R12",
+  "scene": "Showroom page",
+  "t": 49.73,
+  "rule": "beat",
+  "type": "HIT",
+  "what": "Client list, copy, copyright and \"home\" appear",
+  "thumb": 50.5
+ },
+ {
+  "id": "R13",
+  "scene": "Showroom page",
+  "t": 52.1,
+  "rule": "down",
+  "type": "MOVE",
+  "dur": 3.5,
+  "what": "Ambient green blob drifts across the list",
+  "thumb": 54.25
+ },
+ {
+  "id": "R14",
+  "scene": "Showroom \u2192 hub",
+  "t": 56.0,
+  "rule": "8th",
+  "type": "HIT",
+  "what": "Hover \"home\"",
+  "thumb": 56.0
+ },
+ {
+  "id": "E1",
+  "scene": "Transition 4: back to hub",
+  "t": 56.233,
+  "rule": "anchor",
+  "block": "E",
+  "type": "CUT",
+  "what": "Hub-return loop starts. CLICK \"home\": page content clears to bare curves",
+  "thumb": 56.3
+ },
+ {
+  "id": "E2",
+  "scene": "Transition 4: back to hub",
+  "t": 56.5,
+  "rule": "beat",
+  "type": "MOVE",
+  "dur": 0.6,
+  "what": "Zoom-out: the curves become an orange eye on black (with notch)",
+  "thumb": 56.9,
+  "force": 1
+ },
+ {
+  "id": "E3",
+  "scene": "Transition 4: back to hub",
+  "t": 57.1,
+  "rule": "8th",
+  "type": "MOVE",
+  "dur": 0.33,
+  "what": "Eye shrinks; teal bubble trail",
+  "thumb": 57.3,
+  "force": 3
+ },
+ {
+  "id": "E4",
+  "scene": "Transition 4: back to hub",
+  "t": 57.467,
+  "rule": "down+",
+  "type": "CUT",
+  "what": "Hard cut: orange disc with cyan asterisk",
+  "thumb": 57.47,
+  "force": 4
+ },
+ {
+  "id": "E5",
+  "scene": "Transition 4: back to hub",
+  "t": 57.5,
+  "rule": "8th",
+  "type": "HIT",
+  "what": "Peach disc with green sunburst",
+  "thumb": 57.55,
+  "force": 4.5
+ },
+ {
+  "id": "E6",
+  "scene": "Transition 4: back to hub",
+  "t": 57.63,
+  "rule": "beat",
+  "type": "MOVE",
+  "dur": 0.3,
+  "what": "Green sunburst on white, orange rings closing in",
+  "thumb": 57.8,
+  "force": 5
+ },
+ {
+  "id": "E7",
+  "scene": "Transition 4: back to hub",
+  "t": 57.97,
+  "rule": "beat",
+  "type": "HIT",
+  "what": "Small hub ring with showroom chain; zooms to fill",
+  "thumb": 58.1,
+  "force": 6
+ },
+ {
+  "id": "E8",
+  "scene": "Hub idle",
+  "t": 58.3,
+  "rule": "8th",
+  "type": "HIT",
+  "what": "Hub frame lands; teal circles fly off top left",
+  "thumb": 58.35,
+  "force": 6.5
+ },
+ {
+  "id": "E9",
+  "scene": "Hub idle",
+  "t": 58.4,
+  "rule": "beat",
+  "type": "STAG",
+  "dur": 1.3,
+  "what": "Chain collapses and regrows the full menu; eye sharpens",
+  "thumb": 59.5,
+  "force": 7
+ },
+ {
+  "id": "E10",
+  "scene": "Hub \u2192 info",
+  "t": 61.07,
+  "rule": "beat",
+  "type": "HIT",
+  "what": "Hover \"info&contact\"",
+  "thumb": 61.1,
+  "force": 10
+ },
+ {
+  "id": "E11",
+  "scene": "Hub \u2192 info",
+  "t": 61.27,
+  "rule": "8th",
+  "type": "HIT",
+  "what": "CLICK \"info&contact\": chain slides down into the info dot",
+  "thumb": 61.5,
+  "force": 11
+ },
+ {
+  "id": "E12",
+  "scene": "Hub \u2192 info",
+  "t": 61.8,
+  "rule": "beat",
+  "type": "STAG",
+  "dur": 0.3,
+  "what": "Peach dots slide out left and right",
+  "thumb": 61.9,
+  "force": 12
+ },
+ {
+  "id": "E13",
+  "scene": "Hub \u2192 info",
+  "t": 61.93,
+  "rule": "8th",
+  "type": "HIT",
+  "what": "Blurb \"info AND HOW TO contact EYE4U.\" replaces the eye",
+  "thumb": 62.3,
+  "force": 12.5
+ },
+ {
+  "id": "E14",
+  "scene": "Hub \u2192 info",
+  "t": 62.2,
+  "rule": "8th",
+  "type": "STAG",
+  "dur": 0.3,
+  "what": "Cyan chain arcs up-left toward the blurb",
+  "thumb": 62.6,
+  "force": 13.5
+ },
+ {
+  "id": "F1",
+  "scene": "Transition 5: info&contact",
+  "t": 63.2,
+  "rule": "anchor",
+  "block": "F",
+  "type": "CUT",
+  "what": "Info loop starts. Frame drops to white; green starburst from the cyan dot",
+  "thumb": 63.3
+ },
+ {
+  "id": "F2",
+  "scene": "Transition 5: info&contact",
+  "t": 63.33,
+  "rule": "8th",
+  "type": "MOVE",
+  "dur": 0.2,
+  "what": "\"info&contact\" tilts; giant orange letters i and n fly past",
+  "thumb": 63.45
+ },
+ {
+  "id": "F3",
+  "scene": "Transition 5: info&contact",
+  "t": 63.6,
+  "rule": "beat",
+  "type": "MOVE",
+  "dur": 0.2,
+  "what": "Cyan circles and orange rays; huge black \"info&contact\" rotating",
+  "thumb": 63.65
+ },
+ {
+  "id": "F4",
+  "scene": "Transition 5: info&contact",
+  "t": 63.87,
+  "rule": "8th",
+  "type": "HIT",
+  "what": "Orange \"@\" slams through",
+  "thumb": 63.87
+ },
+ {
+  "id": "F5",
+  "scene": "Transition 5: info&contact",
+  "t": 63.93,
+  "rule": "8th",
+  "type": "MOVE",
+  "dur": 0.6,
+  "what": "Push into black letters on cyan",
+  "thumb": 64.2
+ },
+ {
+  "id": "F6",
+  "scene": "Transition 5: info&contact",
+  "t": 64.533,
+  "rule": "down+",
+  "type": "CUT",
+  "what": "Hard cut: grey and black \"fo&\" letters with a red eye inside the \"o\"",
+  "thumb": 64.75
+ },
+ {
+  "id": "F7",
+  "scene": "Transition 5: info&contact",
+  "t": 65.0,
+  "rule": "beat",
+  "type": "MOVE",
+  "dur": 0.2,
+  "what": "Orange swoosh bands and cyan bubbles",
+  "thumb": 65.1,
+  "force": 5
+ },
+ {
+  "id": "F8",
+  "scene": "Info page",
+  "t": 65.27,
+  "rule": "beat",
+  "type": "HIT",
+  "what": "Info page lands: grey watermark, orange swoosh, red corner",
+  "thumb": 65.3,
+  "force": 6
+ },
+ {
+  "id": "F9",
+  "scene": "Info page",
+  "t": 65.35,
+  "rule": "8th",
+  "type": "STAG",
+  "dur": 0.45,
+  "what": "Nav words pop in 8ths: news, about, contact, home; EYE4U logo fades in",
+  "thumb": 65.8,
+  "force": 6.5
+ },
+ {
+  "id": "F10",
+  "scene": "Info page",
+  "t": 68.13,
+  "rule": "beat",
+  "type": "HIT",
+  "what": "Hover \"about\": text goes black, \"EYE4U ACTIVE MEDIA\" subline",
+  "thumb": 68.4
+ },
+ {
+  "id": "F11",
+  "scene": "Info page",
+  "t": 68.8,
+  "rule": "beat",
+  "type": "HIT",
+  "what": "CLICK \"about\": text goes red; cyan ball drops in from the top",
+  "thumb": 68.85
+ },
+ {
+  "id": "F12",
+  "scene": "Info page",
+  "t": 69.0,
+  "rule": "8th",
+  "type": "HIT",
+  "what": "\"home\" becomes \"back\"",
+  "thumb": 69.0,
+  "force": 13.5
+ },
+ {
+  "id": "F13",
+  "scene": "Info page",
+  "t": 69.1,
+  "rule": "8th",
+  "type": "MOVE",
+  "dur": 0.3,
+  "what": "Cyan ellipse swells and melts into a peach circle",
+  "thumb": 69.25,
+  "force": 13.5
+ },
+ {
+  "id": "F14",
+  "scene": "Info page",
+  "t": 69.4,
+  "rule": "beat",
+  "type": "HIT",
+  "what": "About copy and signatures appear in the circle",
+  "thumb": 70.0,
+  "force": 14
+ },
+ {
+  "id": "F15",
+  "scene": "Info page",
+  "t": 70.8,
+  "rule": "down",
+  "type": "MOVE",
+  "dur": 0.9,
+  "what": "Ambient cyan bubble grows at the circle's top right",
+  "thumb": 71.5
+ },
+ {
+  "id": "F16",
+  "scene": "Info page",
+  "t": 71.97,
+  "rule": "beat",
+  "type": "HIT",
+  "what": "CLICK \"back\": copy clears, ellipse shrinks upward",
+  "thumb": 72.2
+ },
+ {
+  "id": "F17",
+  "scene": "Info page",
+  "t": 72.4,
+  "rule": "beat",
+  "type": "HIT",
+  "what": "Nav returns",
+  "thumb": 72.8
+ },
+ {
+  "id": "F18",
+  "scene": "Info page",
+  "t": 73.6,
+  "rule": "beat",
+  "type": "HIT",
+  "what": "Hover \"contact\": black, \"MAIL, PHONE, ADDRESS\" subline",
+  "thumb": 73.8
+ },
+ {
+  "id": "F19",
+  "scene": "Info page",
+  "t": 74.27,
+  "rule": "beat",
+  "type": "HIT",
+  "what": "CLICK \"contact\": red; pale ellipse drops from top left and grows",
+  "thumb": 74.6
+ },
+ {
+  "id": "F20",
+  "scene": "Info page",
+  "t": 74.9,
+  "rule": "beat",
+  "type": "HIT",
+  "what": "Contact card in the peach circle (mail, phone, fax, address)",
+  "thumb": 75.5
+ },
+ {
+  "id": "F21",
+  "scene": "Info page",
+  "t": 75.87,
+  "rule": "beat",
+  "type": "HIT",
+  "what": "Hover \"back\"",
+  "thumb": 75.9
+ },
+ {
+  "id": "F22",
+  "scene": "Info page",
+  "t": 76.27,
+  "rule": "beat",
+  "type": "HIT",
+  "what": "CLICK \"back\": ellipse shrinks upward",
+  "thumb": 76.4
+ },
+ {
+  "id": "F23",
+  "scene": "Info page",
+  "t": 76.7,
+  "rule": "beat",
+  "type": "HIT",
+  "what": "Nav returns",
+  "thumb": 77.0
+ },
+ {
+  "id": "F24",
+  "scene": "Info \u2192 hub",
+  "t": 78.17,
+  "rule": "beat",
+  "type": "HIT",
+  "what": "Hover \"home\"",
+  "thumb": 78.2
+ },
+ {
+  "id": "F25",
+  "scene": "Info \u2192 hub",
+  "t": 78.77,
+  "rule": "beat",
+  "type": "HIT",
+  "what": "CLICK \"home\": cyan sunburst bursts from the logo eye",
+  "thumb": 78.8
+ },
+ {
+  "id": "F26",
+  "scene": "Info \u2192 hub",
+  "t": 79.13,
+  "rule": "down",
+  "type": "CUT",
+  "what": "Page pans away; EYE4U balloons and fades pink; small hub ring appears and zooms to fill",
+  "thumb": 79.15
+ },
+ {
+  "id": "F27",
+  "scene": "Hub finale",
+  "t": 79.53,
+  "rule": "beat",
+  "type": "HIT",
+  "what": "Hub frame lands (eye blurred)",
+  "thumb": 79.6
+ },
+ {
+  "id": "F28",
+  "scene": "Hub finale",
+  "t": 80.0,
+  "rule": "beat",
+  "type": "STAG",
+  "dur": 0.8,
+  "what": "Chain regrows upward into the full menu",
+  "thumb": 80.4
+ },
+ {
+  "id": "F29",
+  "scene": "Hub finale",
+  "t": 80.8,
+  "rule": "beat",
+  "type": "MOVE",
+  "dur": 0.4,
+  "what": "Eye photo sharpens",
+  "thumb": 81.25
+ },
+ {
+  "id": "F30",
+  "scene": "Hub finale",
+  "t": 84.867,
+  "rule": "keep",
+  "type": "HIT",
+  "what": "End on the hub (audio tail)",
+  "thumb": 84.5
+ }
+]

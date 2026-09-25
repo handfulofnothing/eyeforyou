@@ -1,0 +1,20 @@
+# Whitelist: only code, tools and our own analysis data are published.
+# The 1998 capture, its frames and the soundtrack are not ours to redistribute,
+# and builds, renders and the web output are generated.
+/*
+!/.gitignore
+!/README.md
+!/src/
+!/tools/
+!/render/
+/render/*
+!/render/*.mjs
+!/render/package.json
+!/render/package-lock.json
+!/analysis/
+/analysis/*
+!/analysis/*.json
+!/analysis/*.py
+!/analysis/board_tpl.html
+.DS_Store
+__pycache__/

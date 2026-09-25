@@ -1,0 +1,264 @@
+<title>EYE4U Beat Storyboard</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,600;1,800&family=Barlow:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+:root{
+  --ground:#F4F5F7; --panel:#FFFFFF; --ink:#15171C; --ink-2:#4B505B; --ink-3:#858B97; --rule:#DFE2E8; --rule-2:#ECEEF2;
+  --orange:#F15D08; --orange-ink:#C54A04; --red:#B90002; --cyan:#0FA9C9; --green:#12B83A; --mint:#11B982;
+  --big:#D63A00; --tick:#C9CDD5; --beat:#E8EAEF; --shadow:0 1px 0 rgba(20,23,28,.04),0 2px 10px rgba(20,23,28,.05);
+  --display:"Barlow Condensed","Arial Narrow",Arial,sans-serif; --body:"Barlow",system-ui,-apple-system,"Segoe UI",sans-serif; --mono:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+}
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){
+  color-scheme:dark; --ground:#0F1115; --panel:#171A20; --ink:#ECEDF0; --ink-2:#B5BAC4; --ink-3:#7F8693; --rule:#2B2F37; --rule-2:#21252C;
+  --orange:#FF6A14; --orange-ink:#FF8A45; --red:#E0342F; --cyan:#3CD3F0; --green:#39E05E; --mint:#3BE3A8; --big:#FF7A3D; --tick:#3A3F49; --beat:#23272F; --shadow:none;
+}}
+:root[data-theme="dark"]{
+  color-scheme:dark; --ground:#0F1115; --panel:#171A20; --ink:#ECEDF0; --ink-2:#B5BAC4; --ink-3:#7F8693; --rule:#2B2F37; --rule-2:#21252C;
+  --orange:#FF6A14; --orange-ink:#FF8A45; --red:#E0342F; --cyan:#3CD3F0; --green:#39E05E; --mint:#3BE3A8; --big:#FF7A3D; --tick:#3A3F49; --beat:#23272F; --shadow:none;
+}
+*{box-sizing:border-box}
+body{background:var(--ground);color:var(--ink);font-family:var(--body);font-size:15px;line-height:1.5}
+.wrap{max-width:1240px;margin:0 auto;padding-inline:clamp(16px,4vw,40px);padding-block:36px 72px;display:flex;flex-direction:column;gap:40px}
+.mono{font-family:var(--mono);font-variant-numeric:tabular-nums}
+h1,h2,h3{font-family:var(--display);font-style:italic;font-weight:800;letter-spacing:.005em;line-height:1;margin:0;text-wrap:balance}
+h1{font-size:clamp(40px,6vw,68px)}
+h2{font-size:30px}
+h3{font-size:22px}
+.eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3)}
+.lede{max-width:68ch;color:var(--ink-2);font-size:17px;margin:14px 0 0}
+.hero{display:flex;flex-direction:column;gap:6px}
+.hero h1 .o{color:var(--orange)}
+/* spec strip */
+.spec{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));border-top:2px solid var(--ink);border-bottom:1px solid var(--rule)}
+.spec div{padding:14px 16px 14px 0;border-bottom:1px solid var(--rule-2)}
+.spec dt{font-family:var(--mono);font-size:11px;letter-spacing:.07em;text-transform:uppercase;color:var(--ink-3)}
+.spec dd{margin:4px 0 0;font-family:var(--display);font-weight:600;font-size:24px;line-height:1.1}
+.spec dd small{display:block;font-family:var(--body);font-size:13px;font-weight:400;color:var(--ink-2);margin-top:3px;line-height:1.35}
+/* decision */
+.decide{background:var(--panel);border:1px solid var(--rule);border-radius:6px;box-shadow:var(--shadow);padding:22px clamp(16px,3vw,28px);display:flex;flex-direction:column;gap:16px}
+.decide .q{display:flex;gap:10px;align-items:baseline;flex-wrap:wrap}
+.decide .q .tag{font-family:var(--mono);font-size:11px;letter-spacing:.07em;text-transform:uppercase;background:var(--orange);color:#fff;padding:3px 8px;border-radius:3px}
+.opts{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px}
+.opt{border:1px solid var(--rule);border-radius:5px;padding:14px 16px;display:flex;flex-direction:column;gap:8px}
+.opt h4{margin:0;font-family:var(--display);font-weight:600;font-size:20px}
+.opt ul{margin:0;padding-left:18px;color:var(--ink-2);display:flex;flex-direction:column;gap:4px}
+.opt .pick{font-size:13px;color:var(--ink);font-weight:600}
+.defaults{margin:0;padding-left:18px;color:var(--ink-2);display:flex;flex-direction:column;gap:5px}
+.defaults b{color:var(--ink);font-weight:600}
+/* timeline */
+.tlwrap{display:flex;flex-direction:column;gap:12px}
+.tlscroll{overflow-x:auto;background:var(--panel);border:1px solid var(--rule);border-radius:6px;padding:10px 0}
+.tl{display:block}
+.tl .lab{font-family:var(--mono);font-size:10px;fill:var(--ink-3);letter-spacing:.06em;text-transform:uppercase}
+.tl .blk{opacity:.9}
+.tl .blkt{font-family:var(--mono);font-size:10px;font-weight:500;fill:#111}
+.tl .bt{stroke:var(--beat);stroke-width:1}
+.tl .br{stroke:var(--tick);stroke-width:1}
+.tl .br.drop{stroke:var(--orange);stroke-width:2}
+.tl .bn{font-family:var(--mono);font-size:10px;fill:var(--ink-3)}
+.tl .en{opacity:.8}
+.tl .droplab{font-family:var(--mono);font-size:10px;fill:var(--orange-ink);font-weight:500}
+.tl .cn{stroke:var(--tick);stroke-width:1}
+.tl .cn.big{stroke:var(--big);stroke-width:1.6}
+.tl .ev0{fill:var(--ink-3)}
+.tl .mc{fill:var(--ink)}
+.tl .mh{fill:var(--orange)}
+.tl .mm{fill:var(--panel);stroke:var(--cyan);stroke-width:2}
+.tl .ms{fill:var(--green)}
+.tl .span{fill:var(--cyan);opacity:.35}
+.tl .ax{font-family:var(--mono);font-size:10px;fill:var(--ink-3)}
+.legend{display:flex;flex-wrap:wrap;gap:8px 20px;font-size:13px;color:var(--ink-2)}
+.legend span{display:inline-flex;align-items:center;gap:7px}
+.sw{display:inline-block}
+.sw.cut{width:6px;height:16px;background:var(--ink)}
+.sw.hit{width:10px;height:10px;border-radius:50%;background:var(--orange)}
+.sw.move{width:10px;height:10px;border-radius:50%;border:2px solid var(--cyan)}
+.sw.stag{width:10px;height:10px;border-radius:50%;background:var(--green)}
+.sw.src{width:7px;height:7px;border-radius:50%;background:var(--ink-3)}
+.sw.bigl{width:18px;height:2px;background:var(--big)}
+/* rules */
+.rules{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:0 28px;margin:0;padding:0;list-style:none;border-top:1px solid var(--rule)}
+.rules li{padding:14px 0;border-bottom:1px solid var(--rule-2);display:flex;flex-direction:column;gap:4px}
+.rules b{font-family:var(--display);font-weight:600;font-size:18px}
+.rules span{color:var(--ink-2);font-size:14px}
+/* filters */
+.bar{display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between}
+.filters{display:flex;gap:6px;flex-wrap:wrap}
+.filters button{font:500 13px var(--body);color:var(--ink-2);background:var(--panel);border:1px solid var(--rule);border-radius:999px;padding:6px 14px;cursor:pointer}
+.filters button[aria-pressed="true"]{background:var(--ink);color:var(--ground);border-color:var(--ink)}
+.filters button:focus-visible{outline:2px solid var(--orange);outline-offset:2px}
+/* scenes */
+.scenes{display:flex;flex-direction:column;gap:34px}
+.sh{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:6px 16px;border-bottom:1px solid var(--rule);padding-bottom:8px;margin-bottom:14px}
+.sm{display:flex;align-items:center;gap:8px;flex-wrap:wrap;font-size:12px;color:var(--ink-3)}
+.btag{display:inline-block;font-family:var(--mono);font-size:11px;font-weight:500;color:#111;background:var(--c);padding:1px 7px;border-radius:3px;line-height:1.6}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(224px,1fr));gap:14px}
+.card{background:var(--panel);border:1px solid var(--rule);border-radius:5px;overflow:hidden;display:flex;flex-direction:column;box-shadow:var(--shadow)}
+.card img{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;background:#000;border-bottom:1px solid var(--rule)}
+.card.retimed{border-color:var(--big)}
+.cb{padding:10px 12px 12px;display:flex;flex-direction:column;gap:7px;flex:1}
+.row1{display:flex;align-items:center;gap:8px}
+.row1 .id{font-size:12px;font-weight:500}
+.row1 .pos{margin-left:auto;font-size:12px;color:var(--ink-2)}
+.chip{font-family:var(--mono);font-size:10px;letter-spacing:.06em;text-transform:uppercase;padding:1px 6px;border-radius:3px;line-height:1.6}
+.c-cut{background:var(--ink);color:var(--ground)}
+.c-hit{border:1px solid var(--orange);color:var(--orange-ink)}
+.c-move{border:1px dashed var(--cyan);color:var(--ink-2)}
+.c-stag{border:1px dotted var(--green);color:var(--ink-2)}
+.what{margin:0;font-size:14px;line-height:1.4;flex:1}
+.times{display:flex;align-items:baseline;gap:6px;font-size:12.5px;flex-wrap:wrap}
+.times .src{color:var(--ink-3);text-decoration:line-through;text-decoration-color:var(--tick)}
+.times .arr{color:var(--ink-3)}
+.times .tgt{font-weight:500}
+.delta{margin-left:auto;color:var(--ink-2)}
+.d-big{color:var(--big);font-weight:500}
+.d-zero{color:var(--ink-3)}
+.meta{font-size:11px;color:var(--ink-3)}
+/* tables */
+.tblwrap{overflow-x:auto;border:1px solid var(--rule);border-radius:6px;background:var(--panel)}
+table{border-collapse:collapse;width:100%;font-size:14px}
+th,td{text-align:left;padding:8px 12px;border-bottom:1px solid var(--rule-2);vertical-align:top}
+th{font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-3);font-weight:500;white-space:nowrap}
+td.num,th.num{text-align:right;white-space:nowrap}
+tr:last-child td{border-bottom:0}
+details{border-top:1px solid var(--rule);padding-top:10px}
+summary{cursor:pointer;font-family:var(--display);font-weight:600;font-size:20px}
+summary:focus-visible{outline:2px solid var(--orange);outline-offset:3px}
+.two{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:28px;align-items:start}
+.sec{display:flex;flex-direction:column;gap:14px}
+.sec > p{margin:0;color:var(--ink-2);max-width:72ch}
+.notes{margin:0;padding-left:18px;color:var(--ink-2);display:flex;flex-direction:column;gap:6px}
+.notes b{color:var(--ink);font-weight:600}
+@media (prefers-reduced-motion: reduce){*{scroll-behavior:auto!important}}
+</style>
+
+<main class="wrap">
+  <header class="hero">
+    <span class="eyebrow">EYE4U active media · 1998 Flash site capture · programmatic rebuild</span>
+    <h1>Beat-grid <span class="o">storyboard</span></h1>
+    <p class="lede">The source is an 84.87 s screen capture of the EYE4U site: an intro, the eye hub, and three sections, each reached through a full-frame Flash transition. I mapped every event frame by frame, measured the soundtrack's own grid, and snapped each event onto it. Nothing has been built yet. This is the timing plan for your review.</p>
+  </header>
+
+  <dl class="spec">
+    <div><dt>Tempo</dt><dd class="mono">135.1 BPM<small>4/4 · beat 444 ms · bar 1.777 s. Blocks range 134.96–135.63</small></dd></div>
+    <div><dt>The drop</dt><dd class="mono">12.871 s<small>Bar 1. Drums enter: 0.25 → 1.75 kick hits per beat. The logo eye zooms at camera</small></dd></div>
+    <div><dt>Loop blocks</dt><dd class="mono">7<small>The site restarts its music at each section change. Each block has its own anchor</small></dd></div>
+    <div><dt>Calibration</dt><dd class="mono">1.4–6.8 ms<small>Median residual of 221 low-band kick onsets (pitch-drop kicks) against each block's grid</small></dd></div>
+    <div><dt>Events</dt><dd class="mono">%%NEV%%<small>%%NCUT%% cuts · %%NHIT%% hits · the rest moves and ripples. %%NRV%% move 250 ms or more</small></dd></div>
+    <div><dt>Output</dt><dd class="mono">1920×1080<small>60 fps · 5,092 frames · source was 854×480 at 30 fps</small></dd></div>
+  </dl>
+
+  <section class="decide" aria-labelledby="dq">
+    <div class="q"><span class="tag">Your call</span><h2 id="dq">Which soundtrack goes on the rebuild?</h2></div>
+    <div class="opts">
+      <div class="opt">
+        <h4>A · Keep the original track</h4>
+        <ul>
+          <li>The most faithful option. The grid above is measured from it.</li>
+          <li>I can't verify its license. It's the site's 1998 score, so it only meets your commercial-use rule if you own or licensed it.</li>
+          <li>The site's click blips are baked into the mix at the unsnapped times. After snapping, a few clicks sit up to ~0.3 s from their sound.</li>
+        </ul>
+        <span class="pick">Pick this if you hold the rights to the EYE4U audio.</span>
+      </div>
+      <div class="opt">
+        <h4>B · Rebuild the score in numpy</h4>
+        <ul>
+          <li>Same grid and the same 7 loop restarts. Structure: beatless pad and arp, drop at bar 1, then pitch-drop kicks and a section loop per page.</li>
+          <li>Synthesised whooshes, pops and clicks, each placed so its measured peak lands on the event and kept quiet under the bed. Loudnorm to −14 LUFS.</li>
+          <li>License-clean by construction. It will sound like a sibling of the original, not the same recording.</li>
+        </ul>
+        <span class="pick">Pick this if the rights are unclear or the piece will be used commercially.</span>
+      </div>
+    </div>
+    <ul class="defaults">
+      <li><b>Cursor:</b> the source shows the system pointer, so the rebuild draws a crisp arrow/hand that eases between targets and presses on the beat.</li>
+      <li><b>Footage:</b> the source has no live-action clips. The only photo is the hub's eye. I'll extract it as a still, upscale it, and pre-render its blur in and out as a 30 fps JPEG sequence. Everything else is rebuilt as vector.</li>
+      <li><b>Type:</b> Barlow Condensed ExtraBold Italic stands in for the site's condensed oblique labels. The EYE4U wordmarks become vector shapes. Fonts are embedded so renders are deterministic.</li>
+    </ul>
+  </section>
+
+  <section class="tlwrap" aria-labelledby="tlh">
+    <div class="bar"><h2 id="tlh">The grid, end to end</h2><span class="eyebrow">scroll sideways · 26 px per second · hover a mark for details</span></div>
+    <div class="tlscroll">%%SVG%%</div>
+    <div class="legend">
+      <span><i class="sw cut"></i>Cut → downbeat</span>
+      <span><i class="sw hit"></i>Hit → beat</span>
+      <span><i class="sw move"></i>Move, starting on a beat (bar = duration)</span>
+      <span><i class="sw stag"></i>Ripple in 8ths</span>
+      <span><i class="sw src"></i>Source timing</span>
+      <span><i class="sw bigl"></i>Moved 250 ms or more</span>
+    </div>
+  </section>
+
+  <section class="sec" aria-labelledby="rh">
+    <h2 id="rh">How events snap</h2>
+    <ul class="rules">
+      <li><b>Section cuts → bar 1 of their loop</b><span>The source restarts its music exactly where each section's transition begins, so these cuts already fall on a downbeat. They move 2–66 ms.</span></li>
+      <li><b>Hard cuts inside a transition → next downbeat</b><span>In the source, the three mid-transition hard cuts fall on beat 4. They move to the next bar line, and the beats after them follow in order.</span></li>
+      <li><b>Hits → nearest beat</b><span>Pops, hovers, clicks and wipe landings. A click that triggers a cut takes the 8th-note pickup, so the cut still lands on the "1".</span></li>
+      <li><b>Ripples → 8ths from a beat</b><span>Dot chains, word builds and nav pops step in 8th notes, starting on a beat.</span></li>
+      <li><b>Moves → time-scaled</b><span>Continuous motion starts on its hit and is stretched or squeezed to land on the next one.</span></li>
+    </ul>
+  </section>
+
+  <section class="sec" aria-labelledby="sbh">
+    <div class="bar"><h2 id="sbh">Storyboard</h2>
+      <div class="filters" role="group" aria-label="Filter events">
+        <button type="button" id="f-all" data-f="all" aria-pressed="true">All events</button>
+        <button type="button" id="f-cut" data-f="cut" aria-pressed="false">Cuts only</button>
+        <button type="button" id="f-big" data-f="big" aria-pressed="false">Moved ≥ 250 ms</button>
+      </div>
+    </div>
+    <p>Frames are from the source at the moment described. Each card reads: source time (struck through) → rebuild time, then the shift. Bar.beat is on the global bar count (the intro counts in with bars −8 to −1), and "&amp;" marks the off-beat 8th.</p>
+    <div class="scenes" id="scenes">%%CARDS%%</div>
+  </section>
+
+  <div class="two">
+    <section class="sec" aria-labelledby="rvh">
+      <h2 id="rvh">Retimes to eyeball</h2>
+      <p>These are the %%NRV%% events that move 250 ms or more. Fifteen follow from putting the three mid-transition hard cuts (R5, E4, F6) on a downbeat: everything after each cut slides with it. Two hovers move a beat earlier so the click gets its own beat. Two ambient drifts now start on a bar line, and one zoom-through gets a full beat. If a cut feels late, it can go back to beat 4 of the bar before, as in the source.</p>
+      <div class="tblwrap"><table><thead><tr><th>ID</th><th>Event</th><th class="num">Source s</th><th class="num">Rebuild s</th><th class="num">Δ ms</th><th>Bar.beat</th></tr></thead><tbody>%%RVROWS%%</tbody></table></div>
+    </section>
+    <section class="sec" aria-labelledby="bkh">
+      <h2 id="bkh">Loop blocks</h2>
+      <p>Each block's tempo and phase are fitted to its kick onsets. A block starts where the source restarts its loop. The intro is beatless, so it uses block A's grid extended backwards as a count-in to the drop.</p>
+      <div class="tblwrap"><table><thead><tr><th>Block</th><th>Section</th><th class="num">Bar 1 at s</th><th class="num">BPM</th><th class="num">Hits on grid</th><th class="num">Median res. ms</th></tr></thead><tbody>%%BLKROWS%%</tbody></table></div>
+    </section>
+  </div>
+
+  <details>
+    <summary>Every bar: start time, 60 fps frame, energy</summary>
+    <div class="tblwrap" style="margin-top:12px"><table><thead><tr><th class="num">Bar</th><th>Block</th><th class="num">Start s</th><th class="num">Frame @60</th><th class="num">Length s</th><th class="num">RMS dBFS</th><th class="num">Low band dB</th></tr></thead><tbody>%%BARROWS%%</tbody></table></div>
+  </details>
+
+  <section class="sec" aria-labelledby="bh">
+    <h2 id="bh">How this feeds the build</h2>
+    <ul class="notes">
+      <li><b>One page, one clock.</b> A 1920×1080 HTML file. <span class="mono">window.seek(t)</span> computes every style from the timings above, with no CSS animations, timers or carried state. It awaits image decodes before resolving.</li>
+      <li><b>Grid in code.</b> Beat time = block anchor + n × 60/BPM<sub>block</sub>. The storyboard's IDs become the keys in the timeline table.</li>
+      <li><b>3D safety.</b> The zoom-through and ring moves use <span class="mono">preserve-3d</span> only on inner layers. Fades and blurs go on a flat wrapper. Match-cut targets (hub ring, dots, logo eye) are measured at runtime.</li>
+      <li><b>Render.</b> Playwright shoots 3 subframes per frame (t − 1/240, t, t + 1/240), then <span class="mono">tmix</span> blends them to 60 fps: 5,092 frames from 15,276 shots.</li>
+      <li><b>Probe first.</b> One frame per scene (24 total) goes up for review before the full render, checked for clutter, overlap and legibility.</li>
+    </ul>
+  </section>
+</main>
+<script>
+(function(){
+  var btns=[].slice.call(document.querySelectorAll('.filters button'));
+  var cards=[].slice.call(document.querySelectorAll('.card'));
+  var scenes=[].slice.call(document.querySelectorAll('[data-scene]'));
+  function apply(f){
+    btns.forEach(function(b){b.setAttribute('aria-pressed', String(b.dataset.f===f));});
+    cards.forEach(function(c){
+      var show = f==='all' || (f==='cut' && c.dataset.type==='CUT') || (f==='big' && c.dataset.big==='1');
+      c.hidden=!show;
+    });
+    scenes.forEach(function(s){ s.hidden = !s.querySelector('.card:not([hidden])'); });
+    try{ localStorage.setItem('eye4u-sb-filter', f); }catch(e){}
+  }
+  btns.forEach(function(b){ b.addEventListener('click', function(){ apply(b.dataset.f); }); });
+  var saved='all'; try{ saved=localStorage.getItem('eye4u-sb-filter')||'all'; }catch(e){}
+  apply(saved);
+})();
+</script>
