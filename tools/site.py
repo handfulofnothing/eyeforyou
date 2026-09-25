@@ -155,6 +155,16 @@ fill = dict(S)
 fill.update(ja_near=S['ja']['near'], frames_fmt=f"{S['frames']:,}", jb_mean=S['jb']['mean'], ja_mean=S['ja']['mean'], jb_10=S['jb']['over10'], ja_10=S['ja']['over10'],
             size_mp4=mb('media/eye4u_rebuild_1080p60.mp4'), size_sbs=mb('media/eye4u_side_by_side.mp4'), size_html=mb('media/eye4u.html'),
             github=GITHUB, **{f'{k}_w': v[0] for k, v in sizes.items()}, **{f'{k}_h': v[1] for k, v in sizes.items()})
+usage = json.loads((A / 'usage.json').read_text())   # tools/usage.py, from the session transcript
+def tk(x): return f"{x / 1e6:.1f}&nbsp;M" if x >= 1e6 else f"{x / 1e3:.0f}&nbsp;k" if x >= 1e3 else str(x)
+from datetime import date
+ut = usage['tokens']; wm = usage['wall_min']
+MODEL = {'claude-opus-5-5': 'Claude Opus 5.5'}
+fill.update(u_day=date.fromisoformat(usage['day']).strftime('%-d %B %Y'), u_start=usage['start'], u_end=usage['end'],
+            u_wall=f"{wm // 60} h {wm % 60:02d} min", u_prompts=usage['prompts'], u_tools=f"{usage['tool_calls']:,}", u_resp=f"{usage['responses']:,}",
+            u_model=' + '.join(MODEL.get(k, k) for k in usage['models']), u_total=tk(ut['total']), u_out=tk(ut['output']),
+            u_in=tk(ut['input'] + ut['cache_read'] + ut['cache_write']), u_cr=tk(ut['cache_read']), u_cw=tk(ut['cache_write']), u_raw=tk(ut['input']),
+            u_cache_pct=round(100 * ut['cache_read'] / (ut['input'] + ut['cache_read'] + ut['cache_write'])))
 html = re.sub(r'\{\{(\w+)\}\}', lambda m: str(fill[m.group(1)]), tpl)
 if not GITHUB:                                      # no public repo yet: drop the GitHub links
     html = re.sub(r'<a [^>]*data-gh[^>]*>.*?</a>', '', html, flags=re.S)

@@ -1,0 +1,20 @@
+{
+ "day": "2026-09-25",
+ "start": "12:03",
+ "end": "16:04",
+ "wall_min": 240,
+ "active_min": 201,
+ "responses": 402,
+ "tool_calls": 478,
+ "prompts": 10,
+ "models": {
+  "claude-opus-5-5": 402
+ },
+ "tokens": {
+  "input": 804,
+  "cache_write": 1565041,
+  "cache_read": 191137674,
+  "output": 705419,
+  "total": 193408938
+ }
+}

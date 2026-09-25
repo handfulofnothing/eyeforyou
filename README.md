@@ -30,6 +30,7 @@ Redeploy (Small Orange, same SSH account as the main site; touches only this fol
 
 ```bash
 .venv/bin/python tools/build.py
+.venv/bin/python tools/usage.py ~/.claude/projects/<project>/<session>.jsonl   # day + token usage shown on the page
 .venv/bin/python tools/site.py --github https://github.com/handfulofnothing/eyeforyou
 rsync -az --itemize-changes -e ssh web/eyeforyou/ marceloe@sh089.asoshared.com:public_html/funslop/eyeforyou/
 ```

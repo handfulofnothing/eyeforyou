@@ -38,10 +38,11 @@ h1,h2,h3{font-family:'Barlow Condensed',sans-serif;font-style:italic;font-weight
 .top nav{display:flex;gap:18px;flex:none} .top nav a{text-decoration:none;white-space:nowrap}
 
 /* hero */
-.hero{padding:48px 0 34px}
-.eyebrow{font:600 15px/1 'Barlow Condensed';letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:0 0 18px}
-.hero h1{font-size:clamp(72px,13vw,168px)}
-.lede{font-size:clamp(19px,2.1vw,23px);line-height:1.45;max-width:760px;margin:22px 0 0;color:var(--ink2)}
+.hero{padding:22px 0 24px}
+.eyebrow{font:600 14px/1 'Barlow Condensed';letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:0 0 10px}
+.hero h1{font-size:clamp(38px,4.6vw,54px)}
+.lede{font-size:clamp(16.5px,1.5vw,18.5px);line-height:1.5;max-width:720px;margin:10px 0 0;color:var(--ink2)}
+.made{margin:10px 0 0;font:600 14px/1.4 'Barlow Condensed';letter-spacing:.04em;color:var(--muted)}
 
 /* player frame */
 .frame{position:relative;aspect-ratio:16/9;border-radius:var(--r);overflow:hidden;background:#000;
@@ -56,10 +57,10 @@ h1,h2,h3{font-family:'Barlow Condensed',sans-serif;font-style:italic;font-weight
 .btn.primary:hover{background:var(--ink);border-color:var(--ink)}
 
 /* sections */
-section{padding:84px 0 0}
-.sec-head{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:10px 32px;margin:0 0 22px}
-.sec-head h2{font-size:clamp(46px,6vw,72px)}
-.sec-head p{margin:0;max-width:520px;color:var(--ink2)}
+section{padding:64px 0 0}
+.sec-head{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:6px 32px;margin:0 0 16px}
+.sec-head h2{font-size:clamp(24px,2.4vw,30px)}
+.sec-head p{margin:0;max-width:560px;font-size:15.5px;line-height:1.5;color:var(--muted)}
 
 /* beat map */
 .bm{background:var(--soft);border-radius:var(--r);padding:18px 18px 16px}
@@ -83,25 +84,30 @@ section{padding:84px 0 0}
 
 /* stats */
 .stats{display:grid;grid-template-columns:repeat(6,1fr);gap:1px;background:var(--line);border-radius:var(--r);overflow:hidden;border:1px solid var(--line)}
-.stat{background:var(--paper);padding:20px 18px 18px}
-.stat b{display:block;font:800 italic clamp(38px,4vw,52px)/.9 'Barlow Condensed';color:var(--orange);letter-spacing:-.01em}
-.stat b small{font-size:.5em;margin-left:3px;color:var(--ink)}
-.stat span{display:block;margin-top:10px;font-size:14.5px;line-height:1.35;color:var(--ink2)}
+.stat{background:var(--paper);padding:16px 16px 15px}
+.stat b{display:block;font:700 italic clamp(26px,2.4vw,32px)/.95 'Barlow Condensed';color:var(--ink);letter-spacing:-.01em}
+.stat b small{font-size:.55em;margin-left:3px;color:var(--muted)}
+.stat span{display:block;margin-top:8px;font-size:14px;line-height:1.35;color:var(--muted)}
 
 /* compare */
 .sbs{border-radius:var(--r);overflow:hidden;background:#000;aspect-ratio:32/9}
 .sbs video{width:100%;height:100%}
 .sbs-labels{display:grid;grid-template-columns:1fr 1fr;margin:10px 0 0;font:700 italic 20px/1 'Barlow Condensed'}
 .sbs-labels span:last-child{padding-left:4px}
-.cap{margin:12px 0 0;color:var(--ink2);font-size:15.5px;max-width:760px}
+.cap{margin:12px 0 0;color:var(--muted);font-size:14.5px;line-height:1.5;max-width:760px}
+.making{display:grid;grid-template-columns:repeat(5,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:10px;overflow:hidden;margin:6px 0 0}
+.making div{background:var(--paper);padding:13px 14px 12px}
+.making span{display:block;font:600 12.5px/1 'Barlow Condensed';letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.making b{display:block;margin:7px 0 4px;font:700 italic 21px/1.05 'Barlow Condensed';color:var(--ink)}
+.making em{display:block;font-style:normal;font-size:13.5px;line-height:1.35;color:var(--muted)}
 
 /* process */
-.intro{font-size:clamp(19px,2vw,22px);line-height:1.5;max-width:780px;margin:0 0 20px;color:var(--ink2)}
+.intro{font-size:17px;line-height:1.6;max-width:720px;margin:0 0 20px;color:var(--ink2)}
 .steps{list-style:none;margin:0;padding:0}
-.step{display:grid;grid-template-columns:120px minmax(0,1fr);gap:0 24px;padding:46px 0 0;margin:46px 0 0;border-top:1px solid var(--line)}
+.step{display:grid;grid-template-columns:64px minmax(0,1fr);gap:0 20px;padding:32px 0 0;margin:32px 0 0;border-top:1px solid var(--line)}
 .step:first-child{margin-top:26px}
-.step .n{font:800 italic 72px/.8 'Barlow Condensed';color:var(--orange);letter-spacing:-.02em}
-.step h3{font-size:clamp(40px,4.6vw,54px);margin:0 0 14px}
+.step .n{font:700 14px/1 'Barlow Condensed';letter-spacing:.08em;color:var(--muted);padding-top:7px}
+.step h3{font-size:clamp(21px,2vw,24px);line-height:1.1;margin:0 0 10px}
 .step p{max-width:700px;margin:0 0 14px}
 figure{margin:24px 0 0}
 figure img{width:100%;height:auto;border-radius:10px;background:var(--soft)}
@@ -115,7 +121,7 @@ figcaption{margin:10px 0 0;font-size:14.5px;line-height:1.45;color:var(--muted);
 pre{margin:22px 0 0;background:var(--ink);color:#eee;border-radius:10px;padding:18px 20px;overflow:auto;font:13.5px/1.6 ui-monospace,SFMono-Regular,Menlo,monospace}
 pre .c{color:#9a938b} pre .k{color:#ff9a5a}
 code{font:.88em ui-monospace,SFMono-Regular,Menlo,monospace;background:var(--soft2);padding:1px 5px;border-radius:4px}
-blockquote{margin:0 0 18px;padding:2px 0 2px 18px;border-left:3px solid var(--orange);max-width:700px;font:600 italic 22px/1.3 'Barlow Condensed';color:var(--ink)}
+blockquote{margin:0 0 16px;padding:2px 0 2px 16px;border-left:2px solid var(--orange);max-width:700px;font:600 italic 18px/1.35 'Barlow Condensed';color:var(--ink2)}
 blockquote cite{display:block;margin-top:6px;font:500 normal 14.5px/1 Barlow;color:var(--muted)}
 table{border-collapse:collapse;width:100%;font-size:15px}
 th,td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--line);vertical-align:top}
@@ -136,18 +142,18 @@ footer{margin:96px 0 0;padding:40px 0 56px;border-top:1px solid var(--line);font
 .foot nav{display:flex;flex-direction:column;gap:8px;font:700 18px/1.2 'Barlow Condensed';letter-spacing:.02em}
 .foot nav a{text-decoration:none} .foot nav a:hover{text-decoration:underline}
 
-@media (max-width:980px){ .stats{grid-template-columns:repeat(3,1fr)} }
+@media (max-width:980px){ .stats{grid-template-columns:repeat(3,1fr)} .making{grid-template-columns:repeat(2,1fr)} }
 @media (max-width:760px){
   :root{--gut:16px}
   body{font-size:16.5px}
   .top nav{gap:14px}
   .crumbs span,.crumbs b{display:none}
-  .hero{padding:26px 0 24px}
-  section{padding:64px 0 0}
+  .hero{padding:14px 0 18px}
+  section{padding:52px 0 0}
   .bm{padding:12px 10px 12px}
   .stats{grid-template-columns:repeat(2,1fr)}
   .step{grid-template-columns:minmax(0,1fr);padding-top:34px;margin-top:34px}
-  .step .n{font-size:52px;margin:0 0 10px}
+  .step .n{margin:0 0 6px;padding:0}
   .pair{grid-template-columns:1fr}
   .foot{grid-template-columns:1fr}
   .sbs{aspect-ratio:16/9}
@@ -163,9 +169,10 @@ footer{margin:96px 0 0;padding:40px 0 56px;border-top:1px solid var(--line);font
   </header>
 
   <div class="hero">
-    <p class="eyebrow">funslop · september 2026</p>
+    <p class="eyebrow">funslop · {{u_day}}</p>
     <h1><span class="o">eye</span> for you</h1>
     <p class="lede">The 1998 EYE4U Flash intro, rebuilt frame by frame as live code, with every cut landing on a downbeat of its original soundtrack. Directed by Marcelo, made by Claude.</p>
+    <p class="made">Built in one sitting, {{u_start}}–{{u_end}} · {{u_prompts}} prompts · {{u_tools}} tool calls · {{u_total}} tokens</p>
   </div>
 
   <div class="frame"><iframe id="player" src="player/" title="EYE4U, rebuilt: live player" allow="autoplay; fullscreen" allowfullscreen></iframe></div>
@@ -201,6 +208,16 @@ footer{margin:96px 0 0;padding:40px 0 56px;border-top:1px solid var(--line);font
     </div>
   </section>
 
+  <section id="compare">
+    <div class="sec-head">
+      <h2>then and now</h2>
+      <p>The same soundtrack under both. The rebuild is time-warped onto the beat, so the two drift apart by a few frames and meet again at every cut.</p>
+    </div>
+    <div class="sbs"><video controls playsinline preload="metadata" poster="media/sbs_poster.jpg"><source src="media/eye4u_side_by_side.mp4" type="video/mp4"></video></div>
+    <div class="sbs-labels"><span>1998 capture</span><span>rebuild</span></div>
+    <p class="cap">Left: the original site as screen-captured, 854 × 480, with the Flash player showing frames at an irregular 16–21 fps. Right: the rebuild, rendered at 1080p60. <a href="media/eye4u_side_by_side.mp4" download>Download the side-by-side</a> ({{size_sbs}}).</p>
+  </section>
+
   <section id="numbers">
     <div class="stats">
       <div class="stat"><b class="num">135.1</b><span>BPM in 4/4, re-fitted in {{blocks}} blocks</span></div>
@@ -212,19 +229,17 @@ footer{margin:96px 0 0;padding:40px 0 56px;border-top:1px solid var(--line);font
     </div>
   </section>
 
-  <section id="compare">
-    <div class="sec-head">
-      <h2>then and now</h2>
-      <p>The same soundtrack under both. The rebuild is time-warped onto the beat, so the two drift apart by a few frames and meet again at every cut.</p>
-    </div>
-    <div class="sbs"><video controls playsinline preload="metadata" poster="media/sbs_poster.jpg"><source src="media/eye4u_side_by_side.mp4" type="video/mp4"></video></div>
-    <div class="sbs-labels"><span>1998 capture</span><span>rebuild</span></div>
-    <p class="cap">Left: the original site as screen-captured, 854 × 480, with the Flash player showing frames at an irregular 16–21 fps. Right: the rebuild, rendered at 1080p60. <a href="media/eye4u_side_by_side.mp4" download>Download the side-by-side</a> ({{size_sbs}}).</p>
-  </section>
-
   <section id="process">
     <div class="sec-head"><h2>how it was made</h2></div>
     <p class="intro">Everything here was made by Claude, Anthropic's AI model, working as an agent in Claude Code. It watched the capture frame by frame, listened to the track, wrote its own analysis and measuring tools, built the animation and the renderer, and checked each result against the original. Marcelo directed in a handful of plain-English notes and judged what came back. The rule throughout was to measure, never guess.</p>
+    <div class="making">
+      <div><span>day</span><b>{{u_day}}</b><em>{{u_start}}–{{u_end}}, {{u_wall}} start to finish</em></div>
+      <div><span>direction</span><b>{{u_prompts}} prompts</b><em>from Marcelo, in plain English</em></div>
+      <div><span>work</span><b>{{u_tools}} tool calls</b><em>across {{u_resp}} responses from {{u_model}}</em></div>
+      <div><span>tokens written</span><b>{{u_out}}</b><em>code, analysis, prose and tool calls</em></div>
+      <div><span>tokens read</span><b>{{u_in}}</b><em>{{u_cache_pct}}% re-read from the prompt cache ({{u_cr}}), {{u_cw}} newly cached, {{u_raw}} uncached</em></div>
+    </div>
+    <p class="cap">Counted from this session's transcript when the page was published. Each response re-reads the whole conversation so far, which is why cache reads dominate.</p>
 
     <ol class="steps">
       <li class="step"><div class="n">01</div><div>
